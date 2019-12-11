@@ -1,0 +1,173 @@
+
+/* nav */
+.logonav{
+    margin-left:20% ;
+}
+nav ul{
+    margin-right:20px ;
+}
+nav ul li{
+    padding-left:10px ;
+}
+nav ul li a{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333 !important;
+    opacity: 0.9;
+}
+
+/* slide home page */
+
+.slide-home-page{
+    height: 100%;
+    background-color: #222 ;
+}
+.swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide {
+      cursor: pointer;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  .swiper-slide img{
+      object-fit: cover;
+      width: 100%;
+      margin-bottom:1rem ;   
+  }
+
+/* content wraper */
+.title-main-content{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 1rem 0 0.5rem 0;
+    text-indent: 5px;
+}
+.title-main-content a{
+    color: #333;
+}
+.time-author{
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom:0.8rem ;
+
+}
+.intro-title-home-page{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 1rem 0 2rem 0;
+    border-bottom: 3px solid rgb(48, 41, 41);
+    padding-left: 0 !important;
+    margin-left:-10px ;
+}
+.intro-title-home-page a{
+    color: #d0222b;
+    cursor: pointer;
+}
+.intro-title-home-page a:hover{
+    opacity: 0.9;
+    text-decoration: none;
+}
+.suggestion-list img{
+    width: 100%;
+}
+.row-suggestion-list{
+    margin: 0 0 1rem 2rem;
+    border-bottom: 1px solid#d2b0b0;
+}
+.title-suggestion-list{
+    color: #333;
+}
+.title-suggestion-list:hover{
+    color: red;
+    transition: 0.3s;
+}
+@media(max-width:960px){
+    .suggestion-list{
+        padding-left: 0;  
+    }
+    .row-suggestion-list{
+        margin-left: 0;
+    }
+    .img-wrap{
+        padding-left:0 ;
+    }
+    .row-suggestion-list{
+        padding-bottom:1rem ;
+    }.swiper-slide{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* photo of festivals */
+.title-photo-festivals{
+    margin: 1rem 0;
+}
+.title-photo-festivals a{
+    color: #444;
+    font-size: 1.3rem;
+    font-size: 600;
+}
+
+/* footer */
+footer{
+    background-color: #222;
+}
+footer p{
+    color: aliceblue;
+}
+.footer-wrap{
+    margin-top: 15vh;
+    padding-top:3rem;
+    padding-bottom: 3rem;
+}
+.newsletter-title{
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: azure;
+    margin-bottom:1rem ;
+}
+.newsletter hr{
+    background-color: beige;
+    width: 15%;
+    height: 3px;
+    margin-left: 0; 
+}
+
+/* the best festivals */
+.title-the-best-festivals{
+    margin-top: 0;
+}
+.socical-net-work hr{
+    background-color: beige;
+    width: 15%;
+    height: 3px;
+    margin-left: 0;
+}
+.powered-by{
+    color: aliceblue;
+    margin: 1.2rem auto;
+}
+.social-media-footer a i{
+    font-size: 32px;
+    margin-right:1rem ;
+}
+.contact-footer{
+    color: rgb(245, 28, 28);
+    line-height: 3rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
