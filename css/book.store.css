@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Lilita+One|Open+Sans&display=swap');
+
+.item-book-store img{
+    overflow: hidden; 
+}
+.item-book-store img:hover{
+    transform: scale(1.1);
+    transition: 1s;
+}
+.item-book-store{
+    margin: 1rem auto;
+}
+.title-content-book a{
+    color: #0e0101;
+    font-size: 1.1rem;
+    font-family: sans-serif;
+    line-height: 2.5rem;  
+}
+.auth-book{
+    color: #768186;
+    font-size: 0.9rem;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+.logo-book-store{
+    margin: 1rem 0;
+    font-family: 'Lilita One', cursive;
+    font-size: 2rem;
+    color: #ff7f00;
+    border-bottom: 1px solid #e4c5cb;
+    
+}
+.wrap-img{
+    position: relative;
+}
+.wrap-img button{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%,-50%);
+    background-color: #a4f7eb;
+    border: 1px solid #ff7f00;
+    font-weight: 700;
+}
+.wrap-img button a{
+    color: #2c4d80;
+    text-decoration: none;
+}
+.wrap-img:hover button{
+    opacity: 1;
+    top: 50%;
+    transition: 1s;
+}
+
+.pagination span{
+    width: 2.5rem;
+    line-height: 2.5rem;
+    background-color: #a4f7eb;
+    margin: 2rem 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pagination span:nth-child(1),:nth-child(5){
+    font-weight: 900;
+
+    font-size: 1.2rem;
+}
