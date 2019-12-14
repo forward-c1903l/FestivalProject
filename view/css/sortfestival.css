@@ -1,0 +1,44 @@
+.time-and-location{
+    font-weight: bold;
+}
+
+.sidebar-header {
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 3px solid black ;
+    text-transform: uppercase;
+    position: relative;
+    padding: 5px;
+    color: red;
+}
+.sidebar-text {
+    color: black;
+    text-align: left;
+    padding-left: 0px;
+}
+
+.author-time {
+    font-size: 11px;
+    text-align: left;
+
+}
+.author-time  ul{
+    padding-left: 0px;
+}
+li.a-t {
+    font-size: 11px;
+    color: gray;
+    text-align: left;
+}
+
+
+
+
+.hoverable:hover {
+    color: red;
+    font-size: 30px;
+}
+
+.sidebar-text:hover{
+    color: red;
+}
