@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Lilita+One|Open+Sans|Pacifico|Signika&display=swap');
+
+.form-contact input{
+    width: 100%;
+}
+.form-contact label{
+    font-size: 1.1rem;
+    font-family: 'Signika', sans-serif;
+    color: #061856;
+}
+.form-contac textarea{
+    width: 100%;  
+}
+.title-contact{
+    font-family: 'Pacifico', cursive,sans-serif; 
+    font-size: 2.3rem;  
+    font-weight: 900;  
+    margin: 2rem auto 0 0;
+    color: #1e7e88;
+}
+hr{
+    background-color:  #1e7e88;
+    width: 20%;
+    height: 2px;
+    margin-left: 0;
+}
