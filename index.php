@@ -4,7 +4,7 @@
     require('./lib/convertMonth.php');
     require('./common/top.php');
     require('./common/bottom.php');
-    Top('Trang Chu');
+    Top('Trang Chu', "./assets/css/home.css");
 ?>
 
 

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php 
-    function Top($title = 'Festivals') {   
+    function Top($title = 'Festivals', $linkCss) {   
 ?>
     <head>
         <meta charset="UTF-8">
@@ -14,8 +14,12 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-        <link rel="stylesheet" href="./css/home.css">
-        <link rel="stylesheet" href="./css/swiper.min.css">
+        <link rel="stylesheet" href="./assets/css/header.css">
+        <link rel="stylesheet" href="./assets/css/main.css">
+        <link rel="stylesheet" href="./assets/css/footer.css">
+
+        <link rel="stylesheet" href="<?php echo $linkCss ?>">
+        <link rel="stylesheet" href="./assets/css/swiper.min.css">
 
         <title><?php echo $title?></title>
 

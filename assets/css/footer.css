@@ -1,0 +1,44 @@
+/* footer */
+footer{
+    background-color: #222;
+}
+footer p{
+    color: aliceblue;
+}
+.footer-wrap{
+    margin-top: 15vh;
+    padding-top:3rem;
+    padding-bottom: 3rem;
+}
+.newsletter-title{
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: azure;
+    margin-bottom:1rem ;
+}
+.newsletter hr{
+    background-color: beige;
+    width: 15%;
+    height: 3px;
+    margin-left: 0; 
+}
+.socical-net-work hr{
+    background-color: beige;
+    width: 15%;
+    height: 3px;
+    margin-left: 0;
+}
+.powered-by{
+    color: aliceblue;
+    margin: 1.2rem auto;
+}
+.social-media-footer a i{
+    font-size: 32px;
+    margin-right:1rem ;
+}
+.contact-footer{
+    color: rgb(245, 28, 28);
+    line-height: 3rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
