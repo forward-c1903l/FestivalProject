@@ -106,3 +106,6 @@
     
     <?php include('./common/footer.php')?>
 </body>
+<?php 
+    Bottom();
+?>
