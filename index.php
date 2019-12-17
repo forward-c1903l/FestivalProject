@@ -27,15 +27,15 @@
                                 ?>    
 
                                 <div class='items'>
-                                    <a href="/posts-festival.php?id=<?php echo $row_festivalsMost4['id']?>" class='items_dec'><img class="img-fluid" src="<?php echo $row_festivalsMost4['avata_festival']?>"></a>
+                                    <a href="/festival.php?id=<?php echo $row_festivalsMost4['id']?>" class='items_dec'><img class="img-fluid" src="<?php echo $row_festivalsMost4['avata_festival']?>"></a>
                                     <div class="title-main-content">
-                                        <a href="/posts-festival.php?id=<?php echo $row_festivalsMost4['id']?>"><?php echo $row_festivalsMost4['name_festival']?></a>
+                                        <a href="/festival.php?id=<?php echo $row_festivalsMost4['id']?>"><?php echo $row_festivalsMost4['name_festival']?></a>
                                     </div>
                                     <div class="time-author">
                                         <?php echo $dateConvert?>
                                     </div>
                                     <p><?php echo $row_festivalsMost4['des_festival']?></p>
-                                    <a href="/posts-festival.php?id=<?php echo $row_festivalsMost4['id']?>">Read more...</a>
+                                    <a href="/festival.php?id=<?php echo $row_festivalsMost4['id']?>">Read more...</a>
                                 </div>
 
                                 <?php }?>
@@ -51,12 +51,12 @@
 
                                 <div class="row row-suggestion-list">
                                     <div class="col-5 img-wrap">
-                                        <a href="/posts-festival.php?id=<?php echo $row_festivalsMost8['id']?>">
+                                        <a href="/festival.php?id=<?php echo $row_festivalsMost8['id']?>">
                                             <img class="img-fluid" src="<?php echo $row_festivalsMost8['avata_festival']?>">
                                         </a>
                                     </div>
                                     <div class="col-6">
-                                        <a href="/posts-festival.php?id=<?php echo $row_festivalsMost8['id']?>" class="title-suggestion-list">
+                                        <a href="/festival.php?id=<?php echo $row_festivalsMost8['id']?>" class="title-suggestion-list">
                                             <?php echo $row_festivalsMost8['name_festival']?>
                                         </a>
                                         <div class="time-author">
@@ -89,13 +89,13 @@
 
                                     <div class="swiper-slide">
                                         <div class="col-lg-4">
-                                            <a href="/posts-festival.php?id=<?php echo $row_festivalsBest6['id']?>">
+                                            <a href="/festival.php?id=<?php echo $row_festivalsBest6['id']?>">
                                                 <img class="img-fluid" src="<?php echo $row_festivalsBest6['avata_festival']?>" alt="slide img">
                                             </a>
                                         </div>
                                         <div class="col-lg-7">
                                             <div class="title-the-best-festivals title-main-content">
-                                                <a href="/posts-festival.php?id=<?php echo $row_festivalsBest6['id']?>">
+                                                <a href="/festival.php?id=<?php echo $row_festivalsBest6['id']?>">
                                                     <?php echo $row_festivalsBest6['name_festival']?>
                                                 </a>
                                             </div>
@@ -106,7 +106,7 @@
                                             <p>
                                                 <?php echo $row_festivalsBest6['des_festival'] ?>   
                                             </p>
-                                            <a href="/posts-festival.php?id=<?php echo $row_festivalsBest6['id']?>">Read more...</a>
+                                            <a href="/festival.php?id=<?php echo $row_festivalsBest6['id']?>">Read more...</a>
                                         </div>
                                         <div class="col-lg-1"></div>
                                     </div>

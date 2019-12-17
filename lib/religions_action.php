@@ -48,7 +48,7 @@
             $result = mysqli_query($conn, $sql);
             $row = mysqli_num_rows($result);
             if($row == 0) {
-                header('location:festivals.php');
+                header('location:religions.php');
             }
         }
         
