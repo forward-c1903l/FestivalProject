@@ -1,5 +1,5 @@
 .register{
-    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    background: -webkit-linear-gradient(right,#3498db,#2980b9);
     margin-top: 3%;
     padding: 3%;
 }
@@ -49,18 +49,20 @@
     padding: 10%;
     margin-top: 10%;
 }
-.btnRegister{
+
+.btn_user{
     float: right;
     margin-top: 10%;
     border: none;
     border-radius: 1.5rem;
     padding: 2%;
-    background: #0062cc;
+    background: #2980b9;
     color: #fff;
     font-weight: 600;
-    width: 50%;
+    width: 100%;
     cursor: pointer;
 }
+
 .register .nav-tabs{
     margin-top: 3%;
     border: none;
@@ -93,3 +95,42 @@
     margin-bottom: -15%;
     color: #495057;
 }
+
+
+
+
+
+
+
+
+.login-heading{
+    text-align: center;
+    margin-top: 8%;
+    margin-bottom: -15%;
+    color: #495057;
+}
+
+.login-form{
+    padding: 10%;
+    margin-top: 10%;
+}
+.btnLogin{
+    float: right;
+    margin-top: 10%;
+    border: #0062cc;
+    border-radius: 1.5rem;
+    padding: 2%;
+    background: #0062cc;
+    color: #fff;
+    font-weight: 600;
+    width: 40%;
+    cursor: pointer;
+
+
+}
+
+
+
+
+
+
