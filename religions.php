@@ -39,7 +39,7 @@
                         <div class="row fes-suggest">
                             <!-- Phần sự kiện đề xuất -->
                             <div class="col-lg-4">
-                                <a href="/festival.php?id=<?php echo $row_festivals['id']?>">
+                                <a href="festival.php?p=<?php echo $row_festivals['id']?>">
                                     <img class="img-fluid" 
                                     src="<?php echo $row_festivals['avata_festival'] ?>">
                                 </a>
@@ -47,14 +47,14 @@
                             <div class="col-lg-8">
                                 <div class="blog-festival">
                                     <h4>
-                                        <a href="/festival.php?id=<?php echo $row_festivals['id']?>" class="hoverable">
+                                        <a href="festival.php?p=<?php echo $row_festivals['id']?>" class="hoverable">
                                             <?php echo $row_festivals['name_festival'] ?>
                                         </a>
                                     </h4>
                                     <span class="time-fetival"><?php echo $dateConvert ?> / <?php echo $row_festivals['place_festival'] ?> </span>
                                     <p class="des-fetival"><?php echo $row_festivals['des_festival'] ?></p>
                                     <a name="button" id="blue-button" class="btn btn-primary btn-festival"
-                                        href="/festival.php?id=<?php echo $row_festivals['id']?>" role="button">Read more
+                                        href="festival.php?p=<?php echo $row_festivals['id']?>" role="button">Read more
                                     </a>
                                 </div>
                             </div>
@@ -78,12 +78,12 @@
                         ?>
                         <div class="row festival-news">
                             <div class="col-4" style='text-align: center'>
-                                <a href="/festival.php?id=<?php echo $row_festivalNew['id']?>"><img class="img-fluid img-festival-news"
+                                <a href="festival.php?p=<?php echo $row_festivalNew['id']?>"><img class="img-fluid img-festival-news"
                                     src="<?php echo $row_festivalNew['avata_festival']?>">
                                 </a>
                             </div>
                             <div class="col-8">
-                                <a href="/festival.php?id=<?php echo $row_festivalNew['id']?>" class="sidebar-text">
+                                <a href="festival.php?p=<?php echo $row_festivalNew['id']?>" class="sidebar-text">
                                     <?php echo $row_festivalNew['name_festival']?>
                                 </a>
                                 <div class="author-time">

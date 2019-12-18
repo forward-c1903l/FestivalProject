@@ -1,6 +1,10 @@
 .logonav{
     margin-left:20% ;
 }
+.nav-bg {
+    background: #fff;
+    box-shadow: 0 0 5px #bbb;
+}
 nav ul{
     margin-right:20px ;
 }
@@ -8,36 +12,39 @@ nav ul li{
     padding-left:10px ;
 }
 nav ul li a{
-    font-size: 1.2rem;
     font-weight: 600;
     color: #333 !important;
     opacity: 0.9;
 }
+
+.festival-nav{
+    position: relative;
+    display: inline-block; 
+}
+
 .nav-dropdown{
     padding-left: 0;
     cursor: pointer;
     display: none;
     position: absolute;
-    background-color: #f8f9fa;
+    background-color: #fff;
     min-width: 120px;
     z-index: 1;
     padding-top:1rem ;
+    box-shadow: 0 5px 5px -5px #333;
     
-
-}
-.festival-nav{
-    position: relative;
-    display: inline-block; 
 }
 .nav-dropdown li{
+    padding: 10px;
     list-style: none;
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: #333;
-
 }
+
 .nav-dropdown li a{
-    text-decoration: none;
+    font-size: 0.8rem;
+    color: #777 !important;
 }
 .festival-nav:hover .nav-dropdown{
     display: block;

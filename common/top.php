@@ -14,6 +14,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+        <!-- Font Goggle -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,600,700,900&display=swap" rel="stylesheet">
+
         <link rel="stylesheet" href="./assets/css/header.css">
         <link rel="stylesheet" href="./assets/css/main.css">
         <link rel="stylesheet" href="./assets/css/footer.css">

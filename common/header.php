@@ -1,38 +1,44 @@
+<?php 
+    require('./lib/header_action.php');
+
+?>
+
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top nav-bg">
         <a class="navbar-brand" href="#"><img class="img-fluid logonav" src="./upload/images/logo.png" width="180px" /></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">HOME<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item festival-nav">
-                    <a class="nav-link" href="#">FESTIVALS</a>
-                    <ul class="nav-dropdown">
-                        <li><a href="#">festival1</a></li>
-                        <li><a href="#">festival2</a></li>
-                        <li><a href="#">festival3</a></li>
-                        <li><a href="#">festival4</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">ARTICLES</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">SEARCH</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">SERVICES</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">NEARME</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">SUBMIT</a>
-                </li>
+
+                <?php 
+                    $resultMenu = Category();
+                    while($row_menu = mysqli_fetch_array($resultMenu)) {
+                ?>
+                        <li class="nav-item festival-nav">
+                            <a class="nav-link" href="<?php echo $row_menu['link_cate']?>"><?php echo $row_menu['name_cate']?></a>
+                            <?php 
+                                $resultChildren = GetCategoryChildren($row_menu['id']);
+                                if(is_object($resultChildren)) {
+                            ?>
+                                <ul class="nav-dropdown">
+                                    <?php 
+                                        while($row_MenuChild = mysqli_fetch_array($resultChildren)){
+                                    ?>
+                                        <li>
+                                            <a href="<?php echo $row_MenuChild['link_cate']?>">
+                                                <?php echo $row_MenuChild['name_cate']?>
+                                            </a>
+                                        </li>
+                                    <?php }?>
+                                </ul>
+                            <?php }?>
+
+                        </li>
+        
+                <?php }?>
+
             </ul>
         </div>
     </nav>
