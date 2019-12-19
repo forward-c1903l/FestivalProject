@@ -10,7 +10,7 @@
 
 <body>
     <?php include('./common/header.php')?>
-    <main class='block_main'>
+    <main class='block_main block_main_index'>
         <section>
             <div class="container-fluid slide-home-page ">
                 <div class="swiper-container">
@@ -39,10 +39,10 @@
                 <div class="row justify-content-center">
                     <div class="col-11 ifo-festivals">
                         <div class="intro-title-home-page">
-                            <a href="#">MOST POPULAR FESTIVALS</a>
+                            <h5 href="#">MOST POPULAR FESTIVALS</h5>
                         </div>
                         <div class="row">
-                            <div class="col-lg-6 main-content-home-page">
+                            <div class="col-lg-7 main-content-home-page">
                                 <?php 
                                     $festivalsMost4 = ShowFestivalsMost4();
                                     while($row_festivalsMost4 = mysqli_fetch_array($festivalsMost4)) {
@@ -97,7 +97,7 @@
                         </div>
                         <!-- the best festival -->
                         <div class="row intro-title-home-page">
-                            <a href="#">THE BEST FESTIVALS</a>
+                            <h5 href="#">THE BEST FESTIVALS</h5>
                             <hr/>
                         </div>
                         <div class="row the-best-festivals">
@@ -152,4 +152,3 @@
 <?php 
     Bottom();
 ?>
-</html>

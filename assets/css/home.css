@@ -59,11 +59,11 @@ align-items: center;
     border-bottom: 3px solid rgb(48, 41, 41);
     padding-left: 0 !important;
 }
-.intro-title-home-page a{
+.intro-title-home-page h5{
     color: #d0222b;
-    cursor: pointer;
+    
 }
-.intro-title-home-page a:hover{
+.intro-title-home-page h5:hover{
     opacity: 0.9;
     text-decoration: none;
 }
