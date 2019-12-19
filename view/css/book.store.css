@@ -3,7 +3,7 @@
 .item-book-store img{
     overflow: hidden; 
 }
-.item-book-store img:hover{
+.item-book-store:hover img{
     transform: scale(1.1);
     transition: 1s;
 }
@@ -47,7 +47,8 @@
     color: #2c4d80;
     text-decoration: none;
 }
-.wrap-img:hover button{
+
+.item-book-store:hover button{
     opacity: 1;
     top: 50%;
     transition: 1s;
