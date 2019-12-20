@@ -1,6 +1,6 @@
 <?php 
     require('./lib/header_action.php');
-
+    session_start();
 ?>
 
 <header>
@@ -34,11 +34,11 @@
                                     <?php }?>
                                 </ul>
                             <?php }?>
-
                         </li>
-        
                 <?php }?>
-
+                <?php 
+                    isset($_SESSION['userLogin']) ? require('header-login.php'): require('header-default.php');
+                ?>
             </ul>
         </div>
     </nav>
