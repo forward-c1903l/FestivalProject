@@ -9,23 +9,6 @@
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
         <link rel="stylesheet" href="./css/reviewbook.css">
-        <style>
-
-
-            .img-magnifier-container {
-              position:relative;
-            }
-            
-            .img-magnifier-glass {
-              position: absolute;
-              border: 3px solid #000;
-              border-radius: 50%;
-              cursor: none;
-              /*Set the size of the magnifier glass:*/
-              width: 300px;
-              height: 300px;
-            }
-            </style>
         <script>
             function magnify(imgID, zoom) {
               var img, glass, w, h, bw;
@@ -91,7 +74,7 @@
                 <div class="col-lg-3 picture">
                     <div class="img-magnifier-container">
                         <img id="myimage1" src="./img/books/7139mMVQznL.jpg"
-                            class="img-fluid">
+                            class="img-fluid" >
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -126,20 +109,46 @@
                     </div>
                 </div>
             </div>
+            <hr>
+            <div class="row">
+                <div class="col-lg-3">
+                    <h5 class="header-nav" style="border-bottom: 3px
+                        deepskyblue;">Review</h5>
+                </div>
+            </div>
+            <hr>
+            <h4>The World</h4>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni
+                tempora obcaecati tempore.
+                Exercitationem maxime quis assumenda tenetur suscipit, sed,
+                natus ratione similique dolores doloribus consectetur impedit,
+                ad corporis expedita. Tenetur!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+                iusto, praesentium libero earum ex possimus numquam voluptatem
+                cum
+                repudiandae unde eum autem perspiciatis officiis perferendis
+                obcaecati doloremque laboriosam molestiae consequuntur!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam pariatur nulla molestias obcaecati ab quis quaerat
+                rerum eveniet sunt nobis.
+                Cupiditate quibusdam sit voluptatibus quas voluptatem, quisquam
+                adipisci ipsa voluptas?
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Praesentium doloremque, eveniet repellendus obcaecati amet, at
+                veritatis earum eius eos,
+                in velit maiores sapiente ipsam accusantium ab quae magnam
+                provident ea.
+            </p>
+
+
         </div>
-        <script>
-            /* Initiate Magnify Function
-            with the id of the image, and the strength of the magnifier glass:*/
-            magnify("myimage1", 3);
-            </script>
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <script>
-            magnify("picture1", 2);
+        <script>magnify("myimage1", 3);
         </script>
     </body>
 </html>
