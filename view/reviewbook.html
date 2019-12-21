@@ -1,154 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-        <link rel="stylesheet" href="./css/reviewbook.css">
-        <script>
-            function magnify(imgID, zoom) {
-              var img, glass, w, h, bw;
-              img = document.getElementById(imgID);
-              /*create magnifier glass:*/
-              glass = document.createElement("DIV");
-              glass.setAttribute("class", "img-magnifier-glass");
-              /*insert magnifier glass:*/
-              img.parentElement.insertBefore(glass, img);
-              /*set background properties for the magnifier glass:*/
-              glass.style.backgroundImage = "url('" + img.src + "')";
-              glass.style.backgroundRepeat = "no-repeat";
-              glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
-              bw = 3;
-              w = glass.offsetWidth / 2;
-              h = glass.offsetHeight / 2;
-              /*execute a function when someone moves the magnifier glass over the image:*/
-              glass.addEventListener("mousemove", moveMagnifier);
-              img.addEventListener("mousemove", moveMagnifier);
-              /*and also for touch screens:*/
-              glass.addEventListener("touchmove", moveMagnifier);
-              img.addEventListener("touchmove", moveMagnifier);
-              function moveMagnifier(e) {
-                var pos, x, y;
-                /*prevent any other actions that may occur when moving over the image*/
-                e.preventDefault();
-                /*get the cursor's x and y positions:*/
-                pos = getCursorPos(e);
-                x = pos.x;
-                y = pos.y;
-                /*prevent the magnifier glass from being positioned outside the image:*/
-                if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
-                if (x < w / zoom) {x = w / zoom;}
-                if (y > img.height - (h / zoom)) {y = img.height - (h / zoom);}
-                if (y < h / zoom) {y = h / zoom;}
-                /*set the position of the magnifier glass:*/
-                glass.style.left = (x - w) + "px";
-                glass.style.top = (y - h) + "px";
-                /*display what the magnifier glass "sees":*/
-                glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
-              }
-              function getCursorPos(e) {
-                var a, x = 0, y = 0;
-                e = e || window.event;
-                /*get the x and y positions of the image:*/
-                a = img.getBoundingClientRect();
-                /*calculate the cursor's x and y coordinates, relative to the image:*/
-                x = e.pageX - a.left;
-                y = e.pageY - a.top;
-                /*consider any page scrolling:*/
-                x = x - window.pageXOffset;
-                y = y - window.pageYOffset;
-                return {x : x, y : y};
-              }
-            }
-            </script>
-        <title>Title</title>
-    </head>
-    <body>
-        <div class="container">
-            <hr>
-            <div class="row" style="margin-top: 30px;">
-                <div class="col-lg-3 picture">
-                    <div class="img-magnifier-container">
-                        <img id="myimage1" src="./img/books/7139mMVQznL.jpg"
-                            class="img-fluid" >
-                    </div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <link rel="stylesheet" href="./css/reviewbook.css">
+
+    <title>Riview book</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row book-detail">
+            <div class="col-lg-3 text-center picture">
+                    <img class="img-fluid" src="./img/books/7139mMVQznL.jpg" >
+                    <div class="price my-2 mt-3"><span>Price : $</span><a href="#">100.00</a></div>
+                    <button class="btn btn-primary mb-2">Add to cart</button>
+            </div>  
+            <div class="col-lg-6">
+                <div class="name-of-book">
+                    <a href="#">The World</a>
                 </div>
-                <div class="col-lg-6">
-                    <h3 style="font-weight: bold; margin-top: 30px;">The World</h3>
-                    <a> Author:Travel Planet Public </a>
-                    <br>
-                    <a style="font-weight: bold;">Public: Festival.com</a>
-                    <br>
-                    <br>
-                    <br>
-                    <a style="font-size: 15px; position: relative;">“Chúng ta đã
-                        hứa với nhau như thế nào,Toshiro ?” Oanh tiếp tục. Cô
-                        muốn túm lấy bả vai Toshiro và thụi cho cậu những quả
-                        đấm trong cơn bấn loạn.
-                        “Em muốn anh Toshiro giữ liên lạc với em, không phải em
-                        đòi hỏi trách nhiệm chỉ vì anh Toshiro đã ...<a
-                            href="#">See more...</a> </a>
-                    <hr>
+                <div class="star">
+                    <img src="./img/icon/star.png" alt="star">
+                    <img src="./img/icon/star.png" alt="star">
+                    <img src="./img/icon/star.png" alt="star">
+                    <img src="./img/icon/star.png" alt="star">
+                    <img src="./img/icon/star.png" alt="star"> 
                 </div>
-                <div class="col-lg-3">
-                    <div class="paying profile" style="position: relative;
-                        padding: 15px; padding-bottom: 20px;border-style: solid
-                        ; min-height: 210px; border-color: darkgray;
-                        border-radius: 3px;">
-                        <h4 class="header-paying-profile">Check list</h4>
-                        <hr>
-                        <a>Price</a>
-                        <br>
-                        <hr>
-                        <button type="button" class="btn btn-primary">add to
-                            cart</button>
-                    </div>
+                <div class="author-of-book">
+                    <span>Author:</span> <a href="#">Travel Planet Public</a>
+                </div>
+                <div class="content-book-detail">
+                    Hứa với nhau như thế nào,Toshiro ?” Oanh tiếp tục. Cô
+                    muốn túm lấy bả vai Toshiro và thụi cho cậu những quả
+                    đấm trong cơn bấn loạn.
+                    “Em muốn anh Toshiro giữ liên lạc với em, không phải em
+                    đòi hỏi trách nhiệm chỉ vì anh Toshiro đã ...
+                    <br>
+                    <a href="#">See more...</a>                         
                 </div>
             </div>
-            <hr>
-            <div class="row">
-                <div class="col-lg-3">
-                    <h5 class="header-nav" style="border-bottom: 3px
-                        deepskyblue;">Review</h5>
-                </div>
-            </div>
-            <hr>
-            <h4>The World</h4>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni
-                tempora obcaecati tempore.
-                Exercitationem maxime quis assumenda tenetur suscipit, sed,
-                natus ratione similique dolores doloribus consectetur impedit,
-                ad corporis expedita. Tenetur!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-                iusto, praesentium libero earum ex possimus numquam voluptatem
-                cum
-                repudiandae unde eum autem perspiciatis officiis perferendis
-                obcaecati doloremque laboriosam molestiae consequuntur!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quisquam pariatur nulla molestias obcaecati ab quis quaerat
-                rerum eveniet sunt nobis.
-                Cupiditate quibusdam sit voluptatibus quas voluptatem, quisquam
-                adipisci ipsa voluptas?
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Praesentium doloremque, eveniet repellendus obcaecati amet, at
-                veritatis earum eius eos,
-                in velit maiores sapiente ipsam accusantium ab quae magnam
-                provident ea.
-            </p>
-
-
         </div>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <script>magnify("myimage1", 3);
-        </script>
-    </body>
+        <div class="row">
+            <div class="review col-12">Riview</div>
+            <div class="name-of-book mt-3">
+                <a href="#">The World</a>
+            </div>
+        </div>
+        <div class="content-review">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Magni tempora obcaecati tempore. Exercitationem maxime quis assumenda tenetur suscipit,
+            sed, natus ratione similique dolores doloribus consectetur impedit, ad corporis expedita.
+            Tenetur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla iusto, praesentium
+            libero earum ex possimus numquam voluptatem cum repudiandae unde eum autem perspiciatis 
+            officiis perferendis obcaecati doloremque laboriosam molestiae consequuntur! Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. Quisquam pariatur nulla molestias obcaecati ab quis 
+            quaerat rerum eveniet sunt nobis. Cupiditate quibusdam sit voluptatibus quas voluptatem,
+            quisquam adipisci ipsa voluptas? Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Praesentium doloremque, eveniet repellendus obcaecati amet, at veritatis earum eius eos, 
+            in velit maiores sapiente ipsam accusantium ab quae magnam provident ea.
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </script>
+</body>
+
 </html>
