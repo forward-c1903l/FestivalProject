@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Lilita+One|Open+Sans&display=swap');
+
+.item-book-store img{
+    overflow: hidden; 
+}
+.item-book-store:hover{
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,.1);
+    box-shadow: 0 0 20px rgba(0,0,0,.1);
+}
+.item-book-store{
+    margin: 1rem auto;
+    padding: 0.5rem;
+}
+.title-content-book {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.title-content-book a{
+    color: #0e0101;
+    font-size: 1.1rem;
+    font-family: sans-serif;
+    line-height: 2.5rem;  
+}
+.auth-book{
+    color: #768186;
+    font-size: 0.9rem;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+.title-book-store{
+    border-bottom: 1px solid #e4c5cb;
+}
+
+.title-book-store h3{
+    margin: 1rem 0;
+    font-family: 'Lilita One', cursive;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.title-book-store strong{
+    color: #e74c3c;
+    font-weight: ;
+}
+
+.cost-of-book {
+    color: #e74c3c;
+}
+
+.wrap-img{
+    position: relative;
+}
+.wrap-img button{
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%,-50%);
+    background-color: #007bff;
+    font-weight: 300;
+}
+.wrap-img button:hover{
+    background-color: #0069d9;
+}
+.wrap-img button a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.item-book-store:hover button{
+    opacity: 1;
+    bottom: 10%;
+    transition: 0.5s;
+}
+
+.pagination {
+    margin-top: 30px;
+}
+
+.pagination .item-pagi {
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.pagination .item-pagi .item-pagi-a{
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    line-height: 35px;
+    background: #007bff;
+    text-align: center;
+    transition: 0.5s;
+    font-size: 13px;
+    
+}
+
+.pagination .item-pagi .item-pagi-a:hover{
+    background-color: #0069d9;
+}

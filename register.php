@@ -45,6 +45,7 @@
 
             // Call the server to update the new user
             $insUser = AddUser($userComplete);
+            
 
         } else {
             $_SESSION['userError'] = $userComplete;
