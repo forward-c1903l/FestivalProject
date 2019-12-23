@@ -28,7 +28,7 @@
         return $resultB;
     }
 
-    function CheckIdBookHeader() {
+    function CheckIdBookCategoryHeader() {
         if(isset($_GET['b'])) {
             $idBookCategory = $_GET['b'];
         }
@@ -51,7 +51,7 @@
             $idBookCategory = $_GET['b'];
         } else {
             $idBookCategory = 'all';
-            return 'All Festivals';
+            return 'All Books';
         }
         
         global $conn;
