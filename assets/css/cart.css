@@ -1,0 +1,125 @@
+.cart {
+
+}
+.cart .cart_main {
+    width: 70%;
+    margin: auto;
+}
+.cart .cart_noitem {
+    text-align: center;
+}
+.cart .cart_noitem h3{
+    
+}
+.cart .cart_noitem h6{
+    font-size: 14px;
+}
+.cart .cart_noitem a{
+    margin-top: 20px;
+    padding: 10px 0;
+    display: block;
+    background: #007bff;
+    color: #fff;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.cart .cart_noitem a:hover{
+    text-decoration: none;
+    background: #0069d9;
+}
+.cart .cart_top {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.cart .cart_main .cart_title h4{
+    font-size: 18px;
+}
+
+.cart .cart_item {
+    padding: 10px 0;
+    margin-top: 10px;
+    border: 1px solid #7a7a7a;
+    border-right: none;
+    border-left: none;
+    color: #666;
+}
+.cart .cart_item .cart_item_name {
+    color: #666;
+    font-weight: 600;
+    font-size: 15px;
+}
+.cart .cart_item .cart_item_name:hover {
+    text-decoration: none;
+}
+.cart .cart_item .ip-quantity{
+    width: 50%;
+    text-align: center;
+}
+.cart .cart_item .cart_item_image{
+    
+}
+.cart .cart_item .cart_item_image img{
+    width: 70%;
+}
+.cart_total {
+    padding: 20px 0;
+}
+.cart_total .name_total {
+    font-weight: 600;
+    font-size: 19px;
+    color: black;
+}
+.cart_total .price_total {
+    color: red;
+    font-weight: 600;
+}
+
+.cart_navi {
+    margin-top: 20px;
+}
+
+.cart_navi .cart_navi_link{
+    display: block;
+    margin-top: 10px;
+    padding: 10px 0;
+    background: #007bff;
+    color: #fff;
+    text-align: center;
+}
+.cart_navi .cart_navi_link:hover{
+    text-decoration: none;
+    background: #0069d9;
+}
+
+@media screen and (max-width: 576px) {
+    .cart .cart_main {
+        width: 100%;
+    }
+    .cart .cart_main .cart_title h4{
+        font-size: 12px;
+    }
+    .cart .cart_item .cart_item_image img {
+        width: 100%;
+    }
+    .cart .cart_item .cart_item_name {
+        font-size: 13px;
+    }
+    .cart .cart_item .ip-quantity {
+        width: 100%;
+    }
+    .cart .cart_item .cart_item_price {
+        font-size: 13px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .cart .cart_main {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+    .cart .cart_main {
+        width: 80%;
+    }
+}
