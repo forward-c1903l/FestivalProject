@@ -2,22 +2,6 @@
 
 <?php 
     require('dbConn.php');
-    
-    function CheckSuccessAddToCart() {
-        if(isset($_SESSION['success-add-to-cart'])) {
-            $success = true;
-        } else {
-            $success = false;
-        }
-        return $success;
-    }
-
-    function CheckStatusGet() {
-        if(isset($_GET['status'])) {
-            return true;
-
-        } else return false;
-    }
 
     function CheckIdBook() {
         if(isset($_GET['b'])) {

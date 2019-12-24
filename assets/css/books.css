@@ -1,7 +1,8 @@
 
-/* body{
-  background-color: #f0f6f7;
-} */
+.background-dark {
+  background-color: black;
+  opacity: 0.8;
+}
 .main_books{
   padding-top: 90px;
 }
@@ -139,7 +140,7 @@
 
 .popup-add {
   width: 270px;
-  height: 370px;
+  height: 400px;
   position: fixed;
   z-index: 999999;
   background: #fff;
@@ -193,4 +194,23 @@
 .navigation .navi-link:hover{
   text-decoration: none;
   background: #0069d9;
+}
+.error-add-to-cart{
+  margin: 10px 0;
+}
+.error-add-to-cart .error {
+  color: red;
+  font-size: 14px;
+  font-weight: 600;
+}
+.close-popup {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+}
+.close-popup .btn-close-popup{
+  background: none;
+  border: none;
+  color: #e74c3c;
 }

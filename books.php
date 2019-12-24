@@ -19,7 +19,7 @@
     <main class='block_main main_books'>
         <section class='books'>
             <div class="container">
-                <form action="add-to-cart.php?id=<?php echo $row_book['id']?>" method='post'>
+                <form action="add-to-cart.php?id=<?php echo $row_book['id']?>" class='form-cart'>
                     <div class="row book-block">
                         <div class="col-lg-3 text-center picture">
                                 <img class="img-fluid" src="<?php echo $row_book['avata_book']?>" >
@@ -36,15 +36,10 @@
                             </div>
                             <div class='add-to-cart'>
                                 <label for="i-cart">Quantity: </label>
-                                <input type="text" name='quantity' value='1' id='i-cart' class='quantity-cart'/>
-                                <button type='submit' name='add-to-cart' class='btn-add-cart'><i class="fa fa-shopping-cart"></i> Add To Cart</button>
+                                <input type="text" value='1' id='i-cart' class='quantity-cart'/>
+                                <button type='button' class='btn-add-cart'><i class="fa fa-shopping-cart"></i> Add To Cart</button>
                                 <div class='error-add-to-cart'>
                                     <span class='error'>
-                                        <?php 
-                                            // Check GET error SESSION
-                                            $status = CheckStatusGet();
-                                            echo $status == true ? $_SESSION['error-add-to-cart']: '' ;
-                                        ?>
                                     </span>
                                 </div>
                             </div>
@@ -78,11 +73,12 @@
                 </div>
             </div>
         </section>
-        <?php 
-            $showPopup = CheckSuccessAddToCart();
-            if($showPopup) {
-        ?>
-            <div class='popup-add'>
+            <div class='popup-add' style='display: none'>
+                <div class='close-popup'>
+                    <button class='btn-close-popup'>
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
                 <div class='title-popup'>
                     <h6 class='title'>The product has been added to cart</h6>
                 </div>
@@ -97,20 +93,18 @@
                     </a>
                 </div>
                 <div class='navigation'>
-                    <a href="" class='navi-link'>Check Out</a>
-                    <a href="" class='navi-link'>Cart</a>
+                    <a href="checkout.php" class='navi-link'>Check Out</a>
+                    <a href="cart.php" class='navi-link'>Cart</a>
                 </div>
             </div>
-            
-        <?php }
-            unset($_SESSION['success-add-to-cart']);
-        ?>
     </main>
 
     <?php include('./common/footer.php')?>
+    <script src="./assets/js/add-to-cart.js"></script>
 </body>
 
 
 <?php 
     Bottom();
+    
 ?>

@@ -1,5 +1,4 @@
 <?php 
-require('./lib/add-to-cart_action.php');
 session_start();
 
     if(isset($_POST['quantity'])) {
@@ -14,80 +13,40 @@ session_start();
         header('location:cart.php');
     }
 
+    if($quantity > 30) {
+        echo 'Items exceed limit. Maximum is 30';
+    } else if($quantity === 0) {
+        echo 'Please enter quantity !';
+    } else {
+        if(isset($_SESSION['cart'])) {
+            $observe = false;
 
-
-    if(isset($_SESSION['cart'])) {
-        $status = false;
-        foreach($_SESSION['cart'] as $key => $value){
-            if($_SESSION['cart'][$key]['id'] == $id) {
-                $quantityCurrent = $_SESSION['cart'][$key]['quantity'] + $quantity;
-                $status = true;
-                // Check inventory item in the database with quantity
-                $check = CheckQuantity($id, $quantityCurrent);
-                $_SESSION['error-add-to-cart'] = $check;
-
-                if(empty($check)) {
-                    $_SESSION['cart'][$key]['quantity'] = $quantityCurrent;
-
-                    //Save Session success true
-                    $_SESSION['success-add-to-cart'] = true;
-                    header("location:books.php?b=".$id);
-
+            foreach($_SESSION['cart'] as $key => $value) {
+                if($_SESSION['cart'][$key]['id'] == $id) {
+                    $_SESSION['cart'][$key]['quantity'] += $quantity;
+                    $observe = true;
                     break;
-                } else {
-                    $_SESSION['success-add-to-cart'] = false;
-                    header("location:books.php?b=".$id."&status=1");
                 }
-                
             }
-        }
 
-        if(!$status) {
-            $check = CheckQuantity($id, $quantity);
-            $_SESSION['error-add-to-cart'] = $check;
-
-            // Process empty cart and item's cart (without id Books)
-            if(empty($check)) {
+            if(!$observe) {
                 $cart = [
                     'id' => $id,
                     'quantity' => $quantity
                 ];
-    
                 array_push($_SESSION['cart'], $cart);
-    
-                //Save Session success true
-                $_SESSION['success-add-to-cart'] = true;
-                header("location:books.php?b=".$id);
-    
-            } else {
-                $_SESSION['success-add-to-cart'] = false;
-                header("location:books.php?b=".$id."&status=1");
             }
-        }
 
-    } else {
-        $_SESSION['cart'] = array();
-
-        $check = CheckQuantity($id, $quantity);
-        $_SESSION['error-add-to-cart'] = $check;
-
-         // Process empty cart and item's cart (without id Books)
-        if(empty($check)) {
+        } else {
+            $_SESSION['cart'] = array();
             $cart = [
                 'id' => $id,
                 'quantity' => $quantity
             ];
-
             array_push($_SESSION['cart'], $cart);
-
-            //Save Session success true
-            $_SESSION['success-add-to-cart'] = true;
-            header("location:books.php?b=".$id);
-
-        } else {
-            $_SESSION['success-add-to-cart'] = false;
-            header("location:books.php?b=".$id."&status=1");
         }
 
+        echo 'Success';
     }
+
 ?>
