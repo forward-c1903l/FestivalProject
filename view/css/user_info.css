@@ -1,0 +1,93 @@
+span.a{
+    display: inline-block;
+}
+.item-list {
+    list-style: none;
+}
+.user-ava{
+    display: inline-block;
+    width: 28%;
+}
+.user-name{
+    display: inline-block;
+    width: 70%;
+}
+.box-of-info{
+    padding: 20px;
+    background-color: whitesmoke;
+}
+h3.header_info {
+    color: skyblue;
+    text-decoration: underline;
+}
+
+.control-label{
+    padding-top: 6px;
+}
+.control-label1{
+    padding-top: 4px;
+}
+.container{
+    background-color: skyblue;
+}
+
+.box1 {
+    padding-top: 20px;
+    background-color: whitesmoke;
+}
+
+.bigbox {
+    padding: 40px;
+    background-color: lightgray;
+}
+
+.ava-item{
+    width: 45px;
+    height: 45px;
+}
+table{
+    border-collapse: collapse ;
+    width: 100%;
+    box-sizing: border-box;
+    display: table;
+    border-spacing:2px ;
+    border-color:2px solid gray;
+
+}
+ th{
+    min-width: 130px;
+    color: rgb(120, 120, 120);
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    padding: 20px 15px;
+}
+thead{
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr{
+    display: table-row;
+    border-bottom: 1px solid rgb(244, 244, 244);
+}
+tbody{
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+td{
+    min-width: 130px;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: left;
+    padding: 20px 15px;
+}
+.history-list{
+    background-color: rgb(255, 255, 255);
+    min-height: 400px;
+    border-radius: 4px;
+    padding: 1px;
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,.1);
+    box-shadow: 0 0 20px rgba(0,0,0,.1);
+}
