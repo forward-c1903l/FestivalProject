@@ -21,6 +21,9 @@ nav ul li a{
     position: relative;
     display: inline-block; 
 }
+.festival-nav:hover .nav-link{
+    color: #007bff !important;
+}
 
 .nav-dropdown{
     padding-left: 0;
@@ -30,6 +33,7 @@ nav ul li a{
     background-color: #fff;
     min-width: 120px;
     z-index: 1;
+    left: 0;
     padding-top:1rem ;
     box-shadow: 0 5px 5px -5px #333;
     
@@ -49,4 +53,9 @@ nav ul li a{
 .festival-nav:hover .nav-dropdown{
     display: block;
     
+}
+
+.cart-total {
+    font-size: 14px;
+    color: red;
 }

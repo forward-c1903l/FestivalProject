@@ -46,7 +46,7 @@ session_start();
             array_push($_SESSION['cart'], $cart);
         }
 
-        echo 'Success';
+        echo count($_SESSION['cart']);
     }
 
 ?>

@@ -5,6 +5,8 @@ $(document).ready(function() {
     valueQuantity = $('.quantity-cart').val();
     popUpAdd = $('.popup-add');
     error = $('.error');
+    cartTotalHeader = $('.cart-total');
+
 
     // Block out Submit Input
     $(window).keydown(function(event){
@@ -23,9 +25,13 @@ $(document).ready(function() {
             method: 'post',
             data: {quantity: valueQuantity}
         }).done(function(data) {
-            if(data === 'Success') {
+            dataNew = parseInt(data);
+            if(!isNaN(dataNew)) {
                 popUpAdd.css('display', 'block');
                 error.text('');
+                //update total cart header
+                convertString = `(${data})`;
+                cartTotalHeader.text(convertString);
             } else {
                 error.text(data);
                 popUpAdd.css('display', 'none');
