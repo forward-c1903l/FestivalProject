@@ -1,6 +1,26 @@
+<<<<<<< Updated upstream
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script|Gupter|Josefin+Sans|Kalam|Lobster|Varela+Round&display=swap');
 body{
   background-color: #f0f6f7;
+=======
+
+.img-magnifier-container {
+    position:relative;
+  }
+  
+  .img-magnifier-glass {
+    position: absolute;
+    border: 3px solid #000;
+    border-radius: 50%;
+    cursor: none;
+    /*Set the size of the magnifier glass:*/
+    width: 300px;
+    height: 300px;
+  }
+
+.header-nav:hover{
+    margin-left: 20px;
+>>>>>>> Stashed changes
 }
 .book-detail{
   padding-top: 10vh;
