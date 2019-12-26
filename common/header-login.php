@@ -4,7 +4,7 @@
     </a>
     <ul class="nav-dropdown">
         <li>
-            <a href="information.php?id=<?php echo $_SESSION['userLogin']['id']?>">
+            <a href="information.php">
                 Hello: <?php echo $_SESSION['userLogin']['fullname']?>
             </a>
         </li>

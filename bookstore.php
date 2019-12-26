@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require('./lib/bookstore_action.php');
     require('./common/top.php');
     require('./common/bottom.php');
@@ -36,7 +37,7 @@
                             <a href="books.php?b=<?php echo $row_books['id']?>"><img class="mx-auto d-block img-fluid " src="<?php echo $row_books['avata_book']?>" alt="book"></a>
                         </div>
                         <div class="title-content-book"><a href="books.php?b=<?php echo $row_books['id']?>"><?php echo $row_books['name_book']?></a></div>
-                        <div class="cost-of-book"><?php echo $row_books['price_book']?> VND</div>
+                        <div class="cost-of-book"><?php echo number_format($row_books['price_book'],0,",",".")?> VND</div>
                     </div>
 
                     <?php }?>

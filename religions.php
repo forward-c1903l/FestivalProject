@@ -1,5 +1,5 @@
 <?php 
-    // require('./lib/dbConn.php');
+    session_start();
     require('./lib/religions_action.php');
     require('./lib/convertMonth.php');
     require('./common/top.php');

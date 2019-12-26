@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require('./lib/books_action.php');
     require('./lib/convertContent.php');
     require('./common/top.php');
@@ -32,7 +33,7 @@
                                 <span>Author: <a href="#">Travel Planet Public</a></span>
                             </div>
                             <div class="price-of-book">
-                                <span class='price'><?php echo $row_book['price_book']?> VND</span>
+                                <span class='price'><?php echo number_format($row_book['price_book'],0,",",".")?> VND</span>
                             </div>
                             <div class='add-to-cart'>
                                 <label for="i-cart">Quantity: </label>

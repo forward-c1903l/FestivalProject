@@ -3,7 +3,7 @@
 
     function GetUserLogin($username) {
         global $conn;
-        $sql = "SELECT * FROM user WHERE username = '$username'";
+        $sql = "SELECT id, username, fullname FROM user WHERE username = '$username'";
         $result = mysqli_query($conn, $sql);
         return $result;
     }

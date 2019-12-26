@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     require('./lib/cart_action.php');
     require('./common/top.php');
     require('./common/bottom.php');
@@ -9,10 +10,7 @@
     <?php include('./common/header.php');?>
     
     <?php 
-        var_dump($_SESSION['cart']);
-        // unset($_SESSION['cart']);
         $check = CheckCartSession();
-        var_dump($check);
         if($check) {
     ?>
 
@@ -62,7 +60,7 @@
                                 <input type="text" value='<?php echo $quantity?>' class='ip-quantity' name='<?php echo $quantity?>'/>
                             </div>
                             <div class='col-3'>
-                                <span class='cart_item_price'><?php echo $row_book['price_book']?> VND</span>
+                                <span class='cart_item_price'><?php echo number_format($row_book['price_book'],0,",",".")?> VND</span>
                             </div>
                             <div class='col-2'>
                                 <a href="edit-to-cart.php?id=<?php echo $row_book['id']?>&<?php echo 'action=delete'?>"><i class="fas fa-trash-alt"></i></a>
@@ -82,7 +80,7 @@
                             <div class='col-2 fill'></div>
                             <div class='col-3 value'>
                                 <span class='price_total'>
-                                    <?php echo $total?> VND
+                                    <?php echo number_format($total,0,",",".")?> VND
                                 </span>
                             </div>
                             <div class='col-2 fill'></div>

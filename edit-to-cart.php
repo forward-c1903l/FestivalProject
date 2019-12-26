@@ -1,14 +1,12 @@
 <?php 
-    require('./lib/edit-to-cart_action.php');
     session_start();
+    require('./lib/edit-to-cart_action.php');
 
     if(isset($_POST['quantity']) && isset($_GET['id'])) {
         $id = $_GET['id'];
         $quantity = (int)$_POST['quantity'];
 
-        if($quantity > 50) {
-            echo 'Items exceed limit. Maximum is 50';
-        } else if ($quantity == 0) {
+        if($quantity == 0) {
             echo 'Please enter quantity !';
         } else {
 

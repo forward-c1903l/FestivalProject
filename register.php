@@ -1,10 +1,10 @@
 <?php
+    session_start();
     require('./lib/register_action.php');
     require('./common/top.php');
     require('./common/bottom.php');
     Top('Register', "./assets/css/user.css");
 
-    session_start();
     // Check UserLogin Session. If so, will switch to account information page
     if(isset($_SESSION['userLogin'])) {
         header('location:information.php');

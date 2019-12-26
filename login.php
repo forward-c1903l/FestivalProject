@@ -1,10 +1,10 @@
 <?php 
+    session_start();
     require('./lib/login_action.php');
     require('./common/top.php');
     require('./common/bottom.php');
     Top('Login', "./assets/css/user.css");
 
-    session_start();
     // Check UserLogin Session. If so, will switch to account information page
     if(isset($_SESSION['userLogin'])) {
         header('location:information.php');
@@ -26,7 +26,7 @@
             
             $resultUserComp = GetUserLogin($usernameLogin);
             $row_user = mysqli_fetch_assoc($resultUserComp);
-
+            
             // Save User Login to Session
             $_SESSION['userLogin'] = $row_user;
 
@@ -45,7 +45,7 @@
 
 <body>
     <?php include('./common/header.php')?>
-    <main class='block_main'>
+    <main class='block_main' >
         <div class="container register">
             <div class="row">
                 <div class="col-md-3 register-left">
