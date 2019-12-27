@@ -9,7 +9,7 @@ $(document).ready(function(){
         $(".container-menu-dashboard").toggleClass("container-nav-active");
     });
     $(`.edit-religions img:nth-child(1)`).click(function(){
-        $('.alert-delete-form').css({'opacity':'0.9',"transition":"0.8s","top": "50%"});
+        $('.alert-delete-form').css({'opacity':'0.9',"transition":"0.8s","top": "45vh"});
     });
     $(".wrap-btn button:nth-child(2)").click(function(){
         $('.alert-delete-form').css({'opacity':'0',"top": "10%","transition":"0.5s"});
