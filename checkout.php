@@ -7,10 +7,9 @@
 
     // Check User Login
     $resultUserLogin = CheckUserLogin();
-    var_dump($_SESSION['userLogin']);
+    
     // Check Cart session
     $resultCheckCart = CheckCartSession();
-    var_dump($_SESSION['cart']);
 ?>
 
 <body>

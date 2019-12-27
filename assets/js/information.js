@@ -143,6 +143,9 @@ $(document).ready(function() {
                         data: {userComplete: userChange}
                     }).done(function(data) {
                         if(data === 'Success') {
+                            // remove error
+                            $('.error').text('');
+
                             toastr.success('You have successfully changed account information');
 
                             setTimeout(() => {
