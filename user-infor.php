@@ -25,8 +25,10 @@
         $resultUser  = GetUserLoginDB($idUSerLogin);
         $row_user = mysqli_fetch_assoc($resultUser);
 ?>  
-    <div class="col-lg-9 ">
-        <h4>Your's infomation</h4>
+    <div class="col-lg-9 main-infor">
+        <div class='title-main-infor'>
+            <h4>Your's infomation</h4>
+        </div>
         <form action="user-infor.php" method='post' id='form_change_user'>
             <div class="box-of-info">
                 <div class="info-box">
@@ -80,7 +82,7 @@
                 <div class="info-box">
                     <div class="row box1">
                         <div class="col-lg-3">
-                            <label class="control-label1"
+                            <label class="control-label"
                                 for="phonenumber">Phone number:</label>
                         </div>
                         <div class="col-lg-7">
@@ -104,7 +106,7 @@
                 <div class="info-box">
                     <div class="row box1">
                         <div class="col-lg-3">
-                            <label class="control-label1"
+                            <label class="control-label"
                                 for="address">Your address:</label>
                         </div>
                         <div class="col-lg-7">
@@ -129,7 +131,7 @@
                     <div class='row'>
                         <div class='col-lg-3'></div>
                         <div class='col-lg-7'>
-                        <label class="control-label1" for="change_password"></label>
+                        <label class="control-label" for="change_password"></label>
                             <input
                                 type="checkbox"
                                 name="change_password"
@@ -144,7 +146,7 @@
                     <div class="info-box">
                         <div class="row box1">
                             <div class="col-lg-3">
-                                <label class="control-label1"
+                                <label class="control-label"
                                     for="old_password">Old
                                     password:</label>
                             </div>
@@ -192,7 +194,7 @@
                     <div class="info-box">
                         <div class="row box1">
                             <div class="col-lg-3">
-                                <label class="control-label1"
+                                <label class="control-label"
                                     for="Cnew_password">Confirm new
                                     password:</label>
                             </div>

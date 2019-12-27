@@ -20,6 +20,8 @@
     function CheckUserSession() {
         if(!isset($_SESSION['userLogin'])) {
             header('location:login.php');
+        } else {
+            return $_SESSION['userLogin']['fullname'];
         }
     }
 ?>

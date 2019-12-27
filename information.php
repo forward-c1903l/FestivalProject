@@ -11,14 +11,14 @@
     $checkPage = CheckPageGet();
 
     // Check User Session
-    $checkUser = CheckUserSession();
+    $userLogin = CheckUserSession();
 
 ?>
 
 <body>
     <?php include('./common/header.php')?>
 
-    <main class='block_main' style='background: #F2F2F2'>
+    <main class='block_main' style='background: #F2F2F2; padding-top: 90px'>
         <section class='information'>
             <div class="container">
                 <div class="row bigbox">
@@ -26,27 +26,26 @@
                         <div class="left-header">
                             <div class="user-ava">
                                 <i class="far fa-user-circle" style="font-size:
-                                    45px; color: deepskyblue;"></i>
+                                    45px;"></i>
                             </div>
                             <div class="user-name">
-                                <h4>Your Account</h4>
+                                <span>Your Account</span>
+                                <h6><?php echo $userLogin?></h6>
                             </div>
                         </div>
                         <div class="item-list">
 
-                            <li>
-                                <a href="#">
+                            <li class='<?php echo $checkPage == 0 ? 'active': ''?>'>
+                                <a href="information.php">
                                     <i class="fas fa-user-alt ava-item"
-                                        style="font-size:
-                                        25px; color: deepskyblue; padding: 10px;"></i>
+                                    ></i>
                                     <span>Account infomation</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="#">
+                            <li class='<?php echo $checkPage == 1 ? 'active': ''?>'>
+                                <a href="information.php?page=receipt">
                                     <i class="fas fa-file-invoice-dollar ava-item"
-                                        style="font-size:
-                                        25px; color: deepskyblue; padding: 10px;"></i>
+                                        ></i>
                                     <span>Receipt</span>
                                 </a>
                             </li>

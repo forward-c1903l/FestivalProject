@@ -10,7 +10,7 @@ $(document).ready(function() {
         "onclick": null,
         "showDuration": "300",
         "hideDuration": "1000",
-        "timeOut": "5000",
+        "timeOut": "3000",
         "extendedTimeOut": "1000",
         "showEasing": "swing",
         "hideEasing": "linear",
@@ -144,6 +144,10 @@ $(document).ready(function() {
                     }).done(function(data) {
                         if(data === 'Success') {
                             toastr.success('You have successfully changed account information');
+
+                            setTimeout(() => {
+                                window.location.href = 'information.php';
+                            }, 3000);
                         }
                     })
                 }

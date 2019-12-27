@@ -31,13 +31,18 @@
                 $new_passwordMD5 = md5($value);
                 $sql = "UPDATE user SET password = '$new_passwordMD5' WHERE id = '$id'";
                 $result = mysqli_query($conn, $sql);
+            } else if($key == 'fullname') {
+                $sql = "UPDATE user SET $key = '$value' WHERE id = '$id'";
+                $result = mysqli_query($conn, $sql);
+
+                //Set Session fullname
+                $_SESSION['userLogin']['fullname'] = $value;
+
             } else {
                 $sql = "UPDATE user SET $key = '$value' WHERE id = '$id'";
                 $result = mysqli_query($conn, $sql);
             }
         }
-
         echo 'Success';
-
     }
 ?>

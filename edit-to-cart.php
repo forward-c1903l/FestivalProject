@@ -7,7 +7,11 @@
         $quantity = (int)$_POST['quantity'];
 
         if($quantity == 0) {
-            echo 'Please enter quantity !';
+            $resultCheck = [
+                'status' => false,
+                'error' => 'Please enter quantity !'
+            ];
+            echo json_encode($resultCheck);
         } else {
 
             // Total Update
@@ -26,7 +30,13 @@
 
                 $total = $total + ($row['price_book'] * $_SESSION['cart'][$key]['quantity']);
             }
-            echo $total;
+
+            $resultCheck = [
+                'status' => true,
+                'total' => number_format($total,0,",",".")
+            ];
+
+            echo json_encode($resultCheck);
         }
     } else if(isset($_GET['id']) && isset($_GET['action'])) {
         $id = $_GET['id'];

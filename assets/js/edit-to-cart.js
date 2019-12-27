@@ -24,17 +24,21 @@ $(document).ready(function() {
             method: 'post',
             data: {quantity: valueQuantity}
         }).done(function(data) {
-            dataNew = parseInt(data);
-            
-            if(isNaN(dataNew)) {
+            // Receive JSON
+            let dataNew = JSON.parse(data);
+
+            if(!dataNew['status']) {
                 $(inputTarget).val(valueDefault);// Returns the value before quantity change fails
 
-                alert(data);
+                alert(dataNew['error']);
             } else {
-                priceTotal.text(dataNew);// change the total value when the quantity change is successful
+                let stringTotal = `${dataNew['total']} VND`;
+                priceTotal.text(stringTotal);// change the total value when the quantity change is successful
 
                 $(inputTarget).attr('name', valueQuantity);// Change the value of name when the quantity change is successful
             }
+
+
         });
 
     })

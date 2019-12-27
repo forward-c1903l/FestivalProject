@@ -4,41 +4,100 @@ span.a{
 .item-list {
     list-style: none;
 }
+.item-list li {
+    padding: 5px 0;
+}
+.item-list li:hover {
+    background: #ececec;
+}
+.active {
+    background: #ececec;
+}
+.active a{
+    color: #000 !important;
+}
+.item-list li a{
+    color: #4a4a4a;
+}
+.item-list li a span{
+    font-size: 14px;
+}
+.item-list li a:hover{
+   text-decoration: none;
+   color: #000;
+}
+.left-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
 .user-ava{
-    display: inline-block;
-    width: 28%;
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
 }
 .user-name{
-    display: inline-block;
     width: 70%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.user-name h6{
+    margin-top: 5px;
+    font-size: 16px;
+    color: #000;
+}
+.user-name span {
+    color: #4a4a4a;
+    font-size: 13px;
+}
+.title-main-infor {
+    margin-bottom: 20px;
+}
+.title-main-infor h4{
+    font-size: 18px;
 }
 .box-of-info{
     padding: 20px;
     background-color: white;
 }
 h3.header_info {
-    color: skyblue;
+    /* color: skyblue; */
     text-decoration: underline;
 }
 
 .control-label{
     padding-top: 6px;
-}
-.control-label1{
-    padding-top: 4px;
+    font-size: 15px;
 }
 
 .box1 {
     padding-top: 20px;
 }
+.form-control {
+    font-size: 15px;
+}
 
 .bigbox {
     padding: 40px;
 }
-
+.error-form {
+    margin-top: 5px;
+}
+.error-form .error{
+    color: red;
+    font-size: 13px;
+    font-weight: 600;
+}
 .ava-item{
-    width: 45px;
-    height: 45px;
+    width: 35px;
+    height: 35px;
+    font-size: 15px;
+    padding: 10px;
+    color: #999;
 }
 table{
     border-collapse: collapse ;

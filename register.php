@@ -5,10 +5,11 @@
     require('./common/bottom.php');
     Top('Register', "./assets/css/user.css");
 
-    // Check UserLogin Session. If so, will switch to account information page
+    //Check UserLogin Session. If so, will switch to account information page
     if(isset($_SESSION['userLogin'])) {
         header('location:information.php');
     }
+    
 
     $userDefault = [
         'username',
@@ -41,7 +42,7 @@
         if($complelte) {
             // No more errors. Delete sesstion userError
             unset($_SESSION['userError']);
-            session_destroy();
+            // session_destroy();
 
             // Call the server to update the new user
             $insUser = AddUser($userComplete);
@@ -53,7 +54,7 @@
     } else {
         // check the first login. Delete sesstion userError
         unset($_SESSION['userError']);
-        session_destroy();
+        // session_destroy();
     }
 ?>
 

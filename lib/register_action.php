@@ -116,6 +116,18 @@
         $sql = "INSERT INTO user (username, password, fullname, email, phonenumber, address) values ('$username', '$passwordMD5', '$fullname', '$email', '$phonenumber', '$address')";
 
         $result = mysqli_query($conn, $sql);
+
+        //Save session user register complete
+        $sqlGetId = "SELECT id FROM user WHERE username = '$username'";
+        $resultGetId = mysqli_query($conn, $sqlGetId);
+        $row = mysqli_fetch_assoc($resultGetId);
+        //Save session user register complete
+        $_SESSION['userLogin'] = [
+            'id' => $row['id'],
+            'username' => $username,
+            'fullname' => $fullname
+        ];
+
         header('location:index.php');
 
     }
