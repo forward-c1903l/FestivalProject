@@ -7,7 +7,6 @@
 
     // Check User Login
     $resultUserLogin = CheckUserLogin();
-    
     // Check Cart session
     $resultCheckCart = CheckCartSession();
 ?>
@@ -25,6 +24,7 @@
                                     Information
                                 </span>
                             </div>
+
                             <?php 
                                 if(!$resultUserLogin) {
                             ?>
@@ -137,6 +137,11 @@
                                 <div class='total-checkout'>
                                     <span>Total:</span>
                                     <span class='price-total'><?php echo number_format($total,0,",",".")?> VND</span>
+                                </div>
+                                <div class='error-payment'>
+                                    <span id='error-1'></span>
+                                    <span id='error-2'></span>
+                                    
                                 </div>
                                 <div class='navi-checkout'>
                                     <div class='item-navi'>

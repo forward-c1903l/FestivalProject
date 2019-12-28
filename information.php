@@ -5,7 +5,7 @@
     require('./common/bottom.php');
 
 
-    Top('Login', "./assets/css/information.css");
+    Top('Information', "./assets/css/information.css");
 
     // Check Page
     $checkPage = CheckPageGet();
@@ -43,10 +43,10 @@
                                 </a>
                             </li>
                             <li class='<?php echo $checkPage == 1 ? 'active': ''?>'>
-                                <a href="information.php?page=receipt">
+                                <a href="information.php?page=invoice">
                                     <i class="fas fa-file-invoice-dollar ava-item"
                                         ></i>
-                                    <span>Receipt</span>
+                                    <span>Your Invoices</span>
                                 </a>
                             </li>
                         </div>
@@ -56,7 +56,9 @@
                         if($checkPage == 0) {
                             include('user-infor.php');
                         } else if($checkPage == 1) {
-                            include('user-receipt.php');
+                            include('user-invoice.php');
+                        } else if($checkPage == 2) {
+                            include('user-inv-detail.php');
                         }
                     ?>
 
@@ -67,6 +69,7 @@
 
     <?php include('./common/footer.php')?>
     <script src="./assets/js/information.js"></script>
+    <script src="./assets/js/user-inv-detail.js"></script>
 </body>
 <?php 
     Bottom();

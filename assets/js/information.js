@@ -169,6 +169,34 @@ $(document).ready(function() {
 
 
 
-    //Receipt
+    // ---------------------- Invoice --------------------- //
+    let ipQuanIn = $('.ip-quantity');
+    ipQuanIn.change(function(e) {
+        let valIpQuanIn = e.target.value;
+        let name = e.target['name'];
 
+        $.ajax({
+            url: 'edit-invoice.php',
+            method: 'post',
+            data: {itemChange: {idItem: name, valItem: valIpQuanIn}}
+        }).done(function(data) {
+            let dataNew = JSON.parse(data);
+
+            if(dataNew['status']) {
+                //Update total
+                let total = `${dataNew['msg']} VND`;
+                $('#total-invoice').text(total);
+                toastr.success('You have successfully updated your invoice !');
+            } else {
+                alert(dataNew['msg']);
+            }
+        })
+    })
+
+    $('#btn-open-popup').click(function() {
+        $('#show-popup').css('display','block');
+    })
+    $('#btn-close-popup').click(function() {
+        $('#show-popup').css('display', 'none');
+    })
 })

@@ -9,8 +9,11 @@
         }
 
         switch($page) {
-            case 'receipt': 
+            case 'invoice': 
                 return 1;
+                break;
+            case 'inv-detail': 
+                return 2;
                 break;
             default: 
                 return 0;
