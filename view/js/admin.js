@@ -8,10 +8,10 @@ $(document).ready(function(){
         $(this).toggleClass('nav-active');
         $(".container-menu-dashboard").toggleClass("container-nav-active");
     });
-    $(`.edit-religions img:nth-child(1)`).click(function(){
-        $('.alert-delete-form').css({'opacity':'0.9',"transition":"0.8s","top": "45vh"});
+    $('table tr td:nth-child(5) button').click(function(){
+        $(".alert-delete-form").css({"opacity":"1","transition": "0.6s","top": "20vh"})
     });
     $(".wrap-btn button:nth-child(2)").click(function(){
-        $('.alert-delete-form').css({'opacity':'0',"top": "10%","transition":"0.5s"});
+        $(".alert-delete-form").css({"opacity":"0","transition": "0.6s","top": "2%"})
     })
 })
