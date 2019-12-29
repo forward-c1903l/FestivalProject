@@ -5,7 +5,6 @@
 
     function CheckCartSession() {
         if(isset($_SESSION['cart'])) {
-            var_dump(count($_SESSION['cart']));
             if(count($_SESSION['cart']) == 0) {
                 return false;
             } else {

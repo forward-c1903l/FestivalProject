@@ -2,9 +2,9 @@
     session_start();
     require('./lib/edit-to-cart_action.php');
 
-    if(isset($_POST['quantity']) && isset($_GET['id'])) {
-        $id = $_GET['id'];
-        $quantity = (int)$_POST['quantity'];
+    if(isset($_POST['changes'])) {
+        $id = $_POST['changes']['id'];
+        $quantity = (int)$_POST['changes']['value'];
 
         if($quantity == 0) {
             $resultCheck = [
@@ -38,20 +38,21 @@
 
             echo json_encode($resultCheck);
         }
-    } else if(isset($_GET['id']) && isset($_GET['action'])) {
-        $id = $_GET['id'];
-        $action = $_GET['action'];
-        if($action == 'delete') {
-
-            foreach($_SESSION['cart'] as $key => $value) {
-                if($_SESSION['cart'][$key]['id'] == $id) {
-                    unset($_SESSION['cart'][$key]);
-                }
-                $_SESSION['cart'] = array_values($_SESSION['cart']);// Fix index session cart
+    } else if(isset($_POST['delete'])) {
+        $id = $_POST['delete'];
+        $completed = false;
+        foreach($_SESSION['cart'] as $key => $value) {
+            if($_SESSION['cart'][$key]['id'] == $id) {
+                unset($_SESSION['cart'][$key]);
+                $completed = true;
             }
-
-            header('location:cart.php');
+            $_SESSION['cart'] = array_values($_SESSION['cart']);// Fix index session cart
         }
+
+        if($completed) {
+            echo 'Success';
+        }
+
     }
 
     

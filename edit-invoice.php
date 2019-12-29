@@ -4,11 +4,15 @@
 
     // get id invoice session
     $idInvoice = $_SESSION['invoiceCurrent'];
+    // get id user login
+    $idLogin = $_SESSION['userLogin']['id'];
 
+    // CHANGE QUANTITY ITEM INVOICE
     if(isset($_POST['itemChange'])) {
 
         $idItem = $_POST['itemChange']['idItem'];
         $valItem = $_POST['itemChange']['valItem'];
+        $quantityDefault = $_POST['itemChange']['valDefault'];
 
         if($valItem == 0) {
             $compEdit = [
@@ -18,17 +22,14 @@
             echo json_encode($compEdit);
         } else {
             // Check to see if iditem is in the current invoice
-            $resultCheck = CheckIdItemInvoice($idInvoice, $idItem, $valItem);
+            $resultCheck = CheckIdItemInvoice($idInvoice, $idLogin, $idItem, $valItem, $quantityDefault);
 
         }
     }
 
-    // DELETE ITEM
-    if(isset($_GET['ac']) && isset($_GET['id'])) {
-        if($_GET['ac'] == 'delete') {
-            $idDel = $_GET['id'];
-        }
-
-        $resultCheckDelete= DeleteInvoice($idInvoice, $idDel);
+    //DELETE ITEM INVOICE
+    if(isset($_POST['delete'])) {
+        $idDel = $_POST['delete'];
+        $resultCheckDelete= DeleteInvoice($idInvoice, $idLogin, $idDel);
     }
 ?>

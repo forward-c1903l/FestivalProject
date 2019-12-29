@@ -13,13 +13,16 @@
 }
 
 .book-block{
-  padding: 11vh 4vh;
+  padding: 7vh 4vh;
   margin-bottom: 50px;
   -webkit-box-shadow: 0 0 20px rgba(0,0,0,.1);
   box-shadow: 0 0 20px rgba(0,0,0,.1);
 }
 .book-main {
-  padding: 0;
+  padding: 0px 20px;
+}
+.group {
+  margin-top: 30px;
 }
 .picture{
   cursor: pointer;
@@ -29,11 +32,9 @@
   transform: scale(1.1);
   transition: 0.6s;
 }
-.name-of-book a{
-  text-decoration: none;
-  font-size: 2rem;
+.name-of-book h3{
+  font-size: 22px;
   font-weight: 600;
-  color: #51b9b9;
 }
 .author-of-book{
   line-height: 2.5rem;

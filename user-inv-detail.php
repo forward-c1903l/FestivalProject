@@ -86,7 +86,7 @@
                         <input type="text" value='<?php echo $row_item_invoice['quantity']?>' name='<?php echo $row_item_invoice['id']?>' class='ip-quantity'>
                     </td>
                     <td style='text-align: center'>
-                        <button type="button" id='btn-open-popup'>
+                        <button type="button" value='<?php echo $row_item_invoice['id']?>' class='detele_item btn-open-popup'>
                             <i class="far fa-trash-alt"></i>
                         </button>
                     </td>
@@ -96,24 +96,6 @@
                     <?php }?>
 
                 </tr>
-                <div class='pop-up-delete' id='show-popup'>
-                    <div class='title-popup'>
-                        <h6>Are you sure you want to delete this item!</h6>
-                    </div>
-                    <div class='nav-popup'>
-                        <div class='row'>
-                            <div class='col-6'>
-                                <a class='btn-popup' href='edit-invoice.php?ac=delete&id=<?php echo $row_item_invoice['id']?>'>Yes</i>
-                                </a>
-                            </div>
-                            <div class='col-6'>
-                                <button class='btn-close-popup btn-popup' id='btn-close-popup'>
-                                    No
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <?php }?>
 
             </tbody>
@@ -121,6 +103,23 @@
         <div class='total'>
             <span>Total:</span>
             <span id='total-invoice'><?php echo number_format($checkId['total'],0,",",".")?> VND</span>
+        </div>
+    </div>
+</div>
+<div class='pop-up-delete' id='show-popup'>
+    <div class='title-popup'>
+        <h6>Are you sure you want to delete this item!</h6>
+    </div>
+    <div class='nav-popup'>
+        <div class='row'>
+            <div class='col-6'>
+                <button class='btn-popup' type='button' id='yes-delete'>Yes</button>
+            </div>
+            <div class='col-6'>
+                <button class='btn-close-popup btn-popup' id='btn-close-popup' value='1'>
+                    No
+                </button>
+            </div>
         </div>
     </div>
 </div>  

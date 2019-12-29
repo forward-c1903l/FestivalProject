@@ -22,10 +22,10 @@
             <div class="container">
                 <form action="add-to-cart.php?id=<?php echo $row_book['id']?>" class='form-cart'>
                     <div class="row book-block">
-                        <div class="col-lg-3 text-center picture">
+                        <div class="col-lg-3 text-center picture group">
                                 <img class="img-fluid" src="<?php echo $row_book['avata_book']?>" >
                         </div>  
-                        <div class="col-lg-6 book-main">
+                        <div class="col-lg-6 book-main group">
                             <div class="name-of-book">
                                 <h3><?php echo $row_book['name_book']?></h3>
                             </div>
@@ -51,7 +51,7 @@
                                 <a href="#content">See more</a>                         
                             </div>
                         </div>
-                        <div class='col-lg-3 pur-infor'>
+                        <div class='col-lg-3 pur-infor group'>
                             <div class='purchase-top'>
                                 <h5 class='title-pur'>Purchase Information</h5>
                             </div>

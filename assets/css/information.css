@@ -214,12 +214,12 @@ td{
     font-weight: 600;
     color: tomato;
 }
-#btn-open-popup {
+.btn-open-popup {
     background: none;
     color: #007bff;
     border: none;
 }
-#btn-open-popup:active {
+.btn-open-popup:active {
     outline: none;
 }
 .btn-popup {

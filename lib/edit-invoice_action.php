@@ -1,69 +1,127 @@
 <?php 
     require('dbConn.php');
 
-    function CheckIdItemInvoice($idinv, $idit, $val) {
+
+    function CheckInventory($inven, $quantity) {
+        if($quantity > $inven) {
+            return false;
+        } else return true;
+    }
+
+    function HandleIncreaseInventory($idbook, $quantityDel, $incInOld) {
+        global $conn;
+        $invenNew = $incInOld + $quantityDel;
+        $sql = "UPDATE books SET inventory = '$invenNew' WHERE id='$idbook'";
+        $result = mysqli_query($conn, $sql);
+    }
+
+    function HandleInven($idI, $inven, $quantity, $quantityDef) {
+        global $conn;
+        $changeQuantity = abs($quantityDef - $quantity); // tri tuyet doi
+        $invenNew = 0;
+
+        // Check if the quantity is bigger at first, the inventory item goes up, and vice versa
+
+        if($quantityDef > $quantity) {
+            $invenNew = $inven + $changeQuantity;
+        } else {
+            $invenNew = $inven - $changeQuantity;
+        }
+    
+        $sql = "UPDATE books SET inventory = '$invenNew' WHERE id='$idI'";
+        $result = mysqli_query($conn, $sql);
+    }
+
+    function HandleTotal($id) {
+        global $conn;
+        //recalculate the amount
+        $total = 0;
+        $sqlTotal = "SELECT * FROM 
+                    invoice_details 
+                        INNER JOIN books ON invoice_details.id_book = books.id
+                    WHERE invoice_details.id_invoice='$id'";
+        $resultRecal = mysqli_query($conn, $sqlTotal);
+        while($row = mysqli_fetch_array($resultRecal)) {
+            $total = $total + ($row['quantity'] * $row['price_book']);
+        }
+
+        //update total
+        $sqlTotal = "UPDATE invoice SET total = '$total' WHERE id='$id'";
+        $resultTotal = mysqli_query($conn, $sqlTotal);
+
+        return $total;
+    }
+
+    function CheckIdItemInvoice($idinv, $idUs, $idit, $val, $qDefault) {
         global $conn;
 
-        $sql = "SELECT * FROM invoice_details WHERE id_invoice='$idinv' AND id_book = '$idit'";
+        $sql = "SELECT * FROM 
+                            invoice_details
+                            INNER JOIN invoice ON invoice_details.id_invoice = invoice.id
+                            INNER JOIN books ON invoice_details.id_book = books.id
+                            WHERE invoice_details.id_invoice='$idinv' 
+                                AND id_book = '$idit' 
+                                AND id_user_buy = '$idUs'
+                                AND handle = 0";
         $result = mysqli_query($conn, $sql);
 
         if(mysqli_num_rows($result) == 0) {
             return false;
         } else {
+            //check inventory item
+            $row_item = mysqli_fetch_assoc($result);
+            $resultInven = CheckInventory($row_item['inventory'], $val);
 
-            //update quantity
-            $sql = "UPDATE invoice_details SET quantity = '$val' WHERE id_invoice='$idinv' AND id_book = '$idit'";
-            $result = mysqli_query($conn, $sql);
+            if($resultInven) {
+                //update quantity
+                $sql = "UPDATE invoice_details SET quantity = '$val' WHERE id_invoice='$idinv' AND id_book = '$idit'";
+                $result = mysqli_query($conn, $sql);
 
-            //recalculate the amount
-            $total = 0;
-            $sqlTotal = "SELECT * FROM 
-                        invoice_details 
-                            INNER JOIN books ON invoice_details.id_book = books.id
-                        WHERE invoice_details.id_invoice='$idinv'";
-            $resultRecal = mysqli_query($conn, $sqlTotal);
-            while($row = mysqli_fetch_array($resultRecal)) {
-                $total = $total + ($row['quantity'] * $row['price_book']);
+                $handletotal = HandleTotal($idinv);
+                $handleinven = HandleInven($idit, $row_item['inventory'], $val, $qDefault);
+
+                $compEdit = [
+                    'status' => true,
+                    'msg' => number_format($handletotal,0,",",".")
+                ];
+                echo json_encode($compEdit);
+            } else {
+                $compEdit = [
+                    'status' => false,
+                    'error' => 'inventory',
+                    'name' => $row_item['name_book']
+                ];
+                echo json_encode($compEdit);
             }
-
-            //update total
-            $sqlTotal = "UPDATE invoice SET total = '$total' WHERE id='$idinv'";
-            $resultTotal = mysqli_query($conn, $sqlTotal);
-
-            $compEdit = [
-                'status' => true,
-                'msg' => number_format($total,0,",",".")
-            ];
-            echo json_encode($compEdit);
         }
     }
 
-    function DeleteInvoice($idinv, $idI) {
+    function DeleteInvoice($idinv, $idUs, $idI) {
         global $conn;
-        $sql = "SELECT * FROM invoice_details WHERE id_invoice='$idinv' AND id_book = '$idI'";
+        $sql = "SELECT * FROM 
+                            invoice_details
+                            INNER JOIN invoice ON invoice_details.id_invoice = invoice.id
+                            INNER JOIN books ON invoice_details.id_book = books.id
+                            WHERE invoice_details.id_invoice='$idinv' 
+                                AND id_book = '$idI' 
+                                AND id_user_buy = '$idUs'
+                                AND handle = 0";
+
         $result = mysqli_query($conn, $sql);
 
         if(mysqli_num_rows($result) == 0) {
             return false;
         } else {
+            $row_delete = mysqli_fetch_assoc($result);
+            //delete item
             $sqlDel = "DELETE FROM invoice_details WHERE id_invoice='$idinv' AND id_book = '$idI'";
             $result = mysqli_query($conn, $sqlDel);
             
-            //recalculate the amount
-            $total = 0;
-            $sqlTotal = "SELECT * FROM 
-                        invoice_details 
-                            INNER JOIN books ON invoice_details.id_book = books.id
-                        WHERE invoice_details.id_invoice='$idinv'";
-            $resultRecal = mysqli_query($conn, $sqlTotal);
-            while($row = mysqli_fetch_array($resultRecal)) {
-                $total = $total + ($row['quantity'] * $row['price_book']);
-            }
+            $handle = HandleTotal($idinv);
+            $handleInventory = HandleIncreaseInventory($idI, $row_delete['quantity'], $row_delete['inventory']);
 
-            //update total
-            $sqlTotal = "UPDATE invoice SET total = '$total' WHERE id='$idinv'";
-            $resultTotal = mysqli_query($conn, $sqlTotal);
-            header('location:information.php?page=inv-detail&id='.$idinv);
+            echo "Success";
         }
+
     }
 ?>

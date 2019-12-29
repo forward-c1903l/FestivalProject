@@ -21,54 +21,63 @@
                     <div class='cart_top'>
                         <h4>CART</h4>
                     </div>
-                    <div class='cart_title'>
-                        <div class='row flex align-items-center text-center'>
-                            <div class='col-2'><h4>Image</h4></div>
-                            <div class='col-3'><h4>Name</h4></div>
-                            <div class='col-2'><h4>Quantity</h4></div>
-                            <div class='col-3'><h4>Price</h4></div>
-                            <div class='col-2'><h4>Delete</h4></div>
-                        </div>
-                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th style='text-align: center'>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                    <?php 
-                        $i = 0;
-                        $total = 0;// Total
+                        <?php 
+                            $i = 0;
+                            $total = 0;// Total
 
-                        while($i < count($_SESSION['cart'])) {
-                                
-                            $id = $_SESSION['cart'][$i]['id'];
-                            $quantity = $_SESSION['cart'][$i]['quantity'];
+                            while($i < count($_SESSION['cart'])) {
+                                    
+                                $id = $_SESSION['cart'][$i]['id'];
+                                $quantity = $_SESSION['cart'][$i]['quantity'];
 
-                            $resultBook = CheckIdBookCartIntoDB($id);
-                            $row_book = mysqli_fetch_assoc($resultBook);
+                                $resultBook = CheckIdBookCartIntoDB($id);
+                                $row_book = mysqli_fetch_assoc($resultBook);
 
-                            $total = $total + ($quantity * $row_book['price_book']);
-                    ?>
+                                $total = $total + ($quantity * $row_book['price_book']);
+                        ?>
 
-                    <form action='edit-to-cart.php?id=<?php echo $id?>' class='cart_item'>
-                        <div class='row flex align-items-center text-center'>
-                            <div class='col-2 cart_item_image'>
-                                <a href="books.php?b=<?php echo $id?>">
-                                    <img src="<?php echo $row_book['avata_book']?>" alt="<?php echo $row_book['name_book']?>" />
-                                </a>
-                            </div>
-                            <div class='col-3'>
-                                <a href="books.php?b=<?php echo $id?>" class='cart_item_name'><?php echo $row_book['name_book']?></a>
-                            </div>
-                            <div class='col-2'>
-                                <input type="text" value='<?php echo $quantity?>' class='ip-quantity' name='<?php echo $quantity?>'/>
-                            </div>
-                            <div class='col-3'>
-                                <span class='cart_item_price'><?php echo number_format($row_book['price_book'],0,",",".")?> VND</span>
-                            </div>
-                            <div class='col-2'>
-                                <a href="edit-to-cart.php?id=<?php echo $row_book['id']?>&<?php echo 'action=delete'?>"><i class="fas fa-trash-alt"></i></a>
-                            </div>
-                        </div>
-                    </form>
-                    
-                    <?php $i++;}?>
+                            <tr>
+                                <td class='image'>
+                                    <a href="books.php?b=<?php echo $row_book['id']?>">
+                                        <img src="<?php echo $row_book['avata_book'];?>">
+                                    </a>
+                                </td>
+                                <td>
+                                    <div class='name'>
+                                        <span>
+                                            <?php 
+                                                echo $row_book['name_book'];
+                                            ?>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td><?php echo number_format($row_book['price_book'],0,",",".")?> VND</td>
+                                <td>
+                                    <input type="text" value='<?php echo $quantity?>' name='<?php echo $row_book['id']?>' class='quantity-item'>
+                                </td>
+                                <td style='text-align: center'>
+                                    <button type="button" value='<?php echo $row_book['id']?>' name='delete_item' class='detele_item btn-open-popup'>
+                                        <i class="far fa-trash-alt"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <?php $i++;}?>
+
+                        </tbody>
+                    </table>
+
                     <div class='cart_total'>
                         <div class='row flex align-items-center text-center'>
                             <div class='col-2 value'>

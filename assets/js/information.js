@@ -5,7 +5,7 @@ $(document).ready(function() {
         "debug": false,
         "newestOnTop": false,
         "progressBar": true,
-        "positionClass": "toast-bottom-right",
+        "positionClass": "toast-top-right",
         "preventDuplicates": false,
         "onclick": null,
         "showDuration": "300",
@@ -149,8 +149,8 @@ $(document).ready(function() {
                             toastr.success('You have successfully changed account information');
 
                             setTimeout(() => {
-                                window.location.href = 'information.php';
-                            }, 3000);
+                                location.reload();
+                            }, 1500);
                         }
                     })
                 }
@@ -170,15 +170,23 @@ $(document).ready(function() {
 
 
     // ---------------------- Invoice --------------------- //
+    // change quantity
     let ipQuanIn = $('.ip-quantity');
+    let quantityDefault = 0;
+    ipQuanIn.on('focusin', function() {
+        quantityDefault = $(this).val();
+    })
+
     ipQuanIn.change(function(e) {
+
+        let $this = $(this);
         let valIpQuanIn = e.target.value;
         let name = e.target['name'];
 
         $.ajax({
             url: 'edit-invoice.php',
             method: 'post',
-            data: {itemChange: {idItem: name, valItem: valIpQuanIn}}
+            data: {itemChange: {idItem: name, valItem: valIpQuanIn, valDefault: quantityDefault}}
         }).done(function(data) {
             let dataNew = JSON.parse(data);
 
@@ -187,16 +195,51 @@ $(document).ready(function() {
                 let total = `${dataNew['msg']} VND`;
                 $('#total-invoice').text(total);
                 toastr.success('You have successfully updated your invoice !');
-            } else {
+            } else if(!dataNew['status'] && dataNew['error'] === 'inventory'){
+                $this.val(quantityDefault);
+
+                let textError = `Item ${dataNew['name']} exceeds the allowed limit.Please try again!`;
+                toastr.error(textError);
+            }
+            else {
                 alert(dataNew['msg']);
             }
         })
     })
 
-    $('#btn-open-popup').click(function() {
+    // delete
+    let btnDelete = $('.detele_item');
+
+    btnDelete.click(function() {
+        btnDelete.attr('name', 'detele-item');
         $('#show-popup').css('display','block');
+        $(this).attr('name', 'active-delete');
     })
+
+    $('#yes-delete').click(function() {
+        let btnActiveDelete = $("button[name='active-delete']");
+        let valIdDelete = btnActiveDelete.val();
+        
+        if(typeof(valIdDelete) !== 'undefined') {
+            $.ajax({
+                url: 'edit-invoice.php',
+                method: 'post',
+                data: {delete: valIdDelete}
+            }).done(function(data) {
+                if(data === "Success") {
+                    $('#show-popup').css('display', 'none');
+                    toastr.success('You have successfully deleted this item!!');
+
+                    setTimeout(() => {
+                        location.reload();
+                    }, 1500);
+                }
+            })
+        }
+    })
+
     $('#btn-close-popup').click(function() {
         $('#show-popup').css('display', 'none');
+        btnDelete.attr('name', 'detele-item');
     })
 })
