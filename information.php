@@ -49,6 +49,18 @@
                                     <span>Your Invoices</span>
                                 </a>
                             </li>
+
+                            <?php 
+                                $resultCheckAdmin = CheckAdminAccount();
+                                if($resultCheckAdmin) {
+                            ?>
+                            <li>
+                                <a href="admincp/dashboard.php">
+                                    <i class="fas fa-users-cog ava-item"></i>
+                                    <span>Your Admin Page</span>
+                                </a>
+                            </li>
+                            <?php }?>
                         </div>
                     </div>
 
