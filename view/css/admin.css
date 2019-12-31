@@ -232,7 +232,7 @@ table tr td:nth-child(3) a{
     }
     .nav-active{
         top:0;
-    }
+    }     
 }
 @media(max-width:768px){
 
@@ -244,6 +244,25 @@ table tr td:nth-child(3) a{
     }
 }
 
+
+/* admin all book */
+.admin-all-book table tr td{
+    padding-left:2rem;
+    padding-right:2rem ;
+}
+.admin-all-book table tr td:nth-child(3) a{
+    text-decoration: none; 
+    color: #5d5959;
+}
+.admin-all-book table tr td:nth-child(4) a{
+    text-decoration: none; 
+    color: #5d5959;
+    font-family: 'Gelasio', serif;
+}
+.admin-all-book table tr td:nth-child(5) a{
+    text-decoration: none; 
+    color: #569696;
+}
 
 
 
