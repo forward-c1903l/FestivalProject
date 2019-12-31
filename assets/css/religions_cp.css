@@ -62,6 +62,9 @@
     margin: auto;
     margin-top: 30px;
 }
+.edit_main {
+    width: 100%;
+}
 .group {
     padding: 20px;
     padding-left: 0;
@@ -142,8 +145,29 @@ table tr td:nth-child(3) a{
     color: red;
     text-indent: 0.3rem;
 }
+.image-reli-edit {
 
-
+}
+.image-reli-edit img{
+    width: 100%;
+}
+.pop-up-delete {
+    display: none;
+    width: 270px;
+    height: 400px;
+    position: fixed;
+    z-index: 999999;
+    background: #fff;
+    border: 1px solid #ddd;
+    opacity: 1;
+    top: 30%;
+    left: 50%;
+    padding: 15px;
+    margin-left: -160px;
+    margin-top: -40px;
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,.1);
+    box-shadow: 0 0 20px rgba(0,0,0,.1);
+}
 @media(max-width:960px){
     .admin-all-religions{
         width: 100%;

@@ -1,4 +1,3 @@
-
 <div class="container">       
     <section class="admin-all-religions block-religions">
         <div class='title'>

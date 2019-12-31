@@ -15,7 +15,7 @@
     function GetCategoryChildren($id) {
         global $conn;
         
-        $sql = "SELECT * FROM category WHERE id_parent = '$id'";
+        $sql = "SELECT * FROM category WHERE id_parent = '$id' AND status_cate = 1";
         $result = mysqli_query($conn, $sql);
         $rowCheck = mysqli_num_rows($result);
         if($rowCheck == 0) {

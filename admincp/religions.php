@@ -1,5 +1,6 @@
 <?php 
     session_start();
+    ob_start();
     require('./lib_admin/religions_action.php');
     require('./common/top.php');
     require('./common/bottom.php');
@@ -20,6 +21,8 @@
             <?php 
                 if($resultGet == 1) {
                     include('add_religions.php');
+                } else if($resultGet == 2){
+                    require('edit_religions.php');
                 } else {
 
             ?>
@@ -32,8 +35,7 @@
                                 <th>Image</th>
                                 <th>Name</th>
                                 <th>Status</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
+                                <th>View</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -61,24 +63,11 @@
                                 <td>
                                     <a href="religions.php?ac=edit&id=<?php echo $row_all['id']?>"><i class="far fa-edit"></i></a>
                                 </td>
-                                <td>
-                                    <button type='button' value='<?php echo $row_all['id']?>'><i class="far fa-trash-alt"></i></button>
-                                </td>
                             </tr>
                                 <?php }?>
 
                         </tbody>
                     </table>
-                    <div class="alert-delete-form">
-                        <div class="alert-name">Are you sure delete religions?</div>
-                        <div class="alert-ifo">
-                            Deleting a religion will cause you to lose data about that religion. You cannot restore it.
-                        </div>
-                        <div class="wrap-btn">
-                            <button class="btn btn-primary"> <a href="#">Yes, I'm sure</a></button>
-                            <button class="btn btn-primary">No, Thank you</button>
-                        </div>
-                    </div>
                 </section>
             </div>
 
