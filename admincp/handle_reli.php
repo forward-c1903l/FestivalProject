@@ -62,7 +62,15 @@
     if($_POST['action'] == 'delete') {
         $id_delete = $_SESSION['ad_id_religion_edit'];
 
-        $result_del = DeleteReligion($id_delete);
-        echo "Delete";
+        // check whether this religion has facts
+        $result_check = CheckIdReligionInFestival($id_delete);
+
+        if($result_check) {
+            $result_del = DeleteReligion($id_delete);
+            echo "Delete";
+        } else {
+            echo "Please remove festivals before deleting religions !";
+            die();
+        }
     }
 ?>

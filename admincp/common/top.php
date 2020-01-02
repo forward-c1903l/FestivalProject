@@ -21,6 +21,12 @@
         <!-- Toastr -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 
+        <!-- CKEDITOR -->
+        <script src="./../assets/js/ckeditor/ckeditor.js"></script>
+        <script src="./../assets/js/ckfinder/ckfinder.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+
         <link rel="stylesheet" href="./../assets/css/main_cp.css">
         <link rel="stylesheet" href="./../assets/css/header_cp.css">
         <link rel="stylesheet" href="./../assets/css/menu_cp.css">

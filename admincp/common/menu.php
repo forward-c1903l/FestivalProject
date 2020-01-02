@@ -32,8 +32,8 @@
                     <div  class="toggle-click"><i class="fas fa-angle-right"></i></div>
                 </div>
                 <div class="child-menu-nav">
-                    <div class="child-nav"><a href="#">All Festivals</a></div>
-                    <div class="child-nav"><a href="#">Add Festivals</a></div>
+                    <div class="child-nav"><a href="festivals.php">All Festivals</a></div>
+                    <div class="child-nav"><a href="festivals.php?ac=add">Add Festivals</a></div>
                 </div>
             </div>
             <div class="wrap-title-nav">

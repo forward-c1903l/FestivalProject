@@ -35,7 +35,7 @@
                                 <th>Image</th>
                                 <th>Name</th>
                                 <th>Status</th>
-                                <th>View</th>
+                                <th>Detail</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -47,16 +47,16 @@
                             ?>
                             <tr>
                                 <td>
-                                    <a href="#">
+                                    <a href="religions.php?ac=edit&id=<?php echo $row_all['id']?>">
                                         <img class="img-fluid" src="../<?php echo $row_all['avata_religion']?>" 
                                         alt="<?php echo $row_all['name_religion']?>">
                                     </a>
                                 </td>
                                 <td> 
-                                    <a href="#"><?php echo $row_all['name_religion']?></a>
+                                    <a href="religions.php?ac=edit&id=<?php echo $row_all['id']?>"><?php echo $row_all['name_religion']?></a>
                                 </td>
                                 <td>
-                                    <span>
+                                    <span class='stt-religion'>
                                         <?php echo $status?>
                                     </span>    
                                 </td>

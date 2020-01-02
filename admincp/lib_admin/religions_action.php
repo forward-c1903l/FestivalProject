@@ -115,7 +115,28 @@
         $result = mysqli_query($conn, $sql);
 
         //delete image
-        $status_delete = unlink('./../'.$row_id_cate['avata_religion']);
+        if (file_exists('./../'.$row_id_cate['avata_religion'])) {
+            $status_delete = unlink('./../'.$row_id_cate['avata_religion']);
+        }
+
+        //delete folder
+        if (is_dir('./../upload/religions/'.$id)) {
+            rmdir('./../upload/religions/'.$id);
+        }
+        mysqli_close($conn);
+    }
+
+    function CheckIdReligionInFestival($id) {
+        global $conn;
+
+        $sql = "SELECT * FROM itemfestivals WHERE id_reli='$id'";
+        $result = mysqli_query($conn, $sql);
+        if(mysqli_num_rows($result) == 0) {
+            return true;
+        } else {
+            return false;
+        }
+
         mysqli_close($conn);
     }
 ?>

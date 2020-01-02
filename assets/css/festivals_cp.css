@@ -1,0 +1,46 @@
+#festivals_ad {
+    padding-top: 50px;
+}
+.admin-festivals {
+    width: 80%;
+    margin-left: auto;
+    border: 1px solid #dee2e6;
+    -webkit-box-shadow: 0 0.46875rem 2.1875rem rgba(31,10,6,0.03), 0 0.9375rem 1.40625rem rgba(31,10,6,0.03), 0 0.25rem 0.53125rem rgba(31,10,6,0.05), 0 0.125rem 0.1875rem rgba(31,10,6,0.03);
+    -moz-box-shadow: 0 0.46875rem 2.1875rem rgba(31,10,6,0.03), 0 0.9375rem 1.40625rem rgba(31,10,6,0.03), 0 0.25rem 0.53125rem rgba(31,10,6,0.05), 0 0.125rem 0.1875rem rgba(31,10,6,0.03);
+    box-shadow: 0 0.46875rem 2.1875rem rgba(31,10,6,0.03), 0 0.9375rem 1.40625rem rgba(31,10,6,0.03), 0 0.25rem 0.53125rem rgba(31,10,6,0.05), 0 0.125rem 0.1875rem rgba(31,10,6,0.03);
+}
+.item-fes:{
+    transition: 0.4s;
+}
+.item-fes:hover {
+    background: rgb(219, 219, 219);
+}
+.name-fes {
+    font-size: 15px;
+    color: black;
+}
+.name-fes:hover {
+    text-decoration: none;
+}
+.name-reli {
+    font-size: 15px;
+    color: black;
+}
+.name-reli:hover {
+    text-decoration: none;
+}
+.date-fes{
+    font-size: 14px;
+}
+.place-fes {
+    font-size: 14px;
+}
+.stt-fes {
+    font-size: 14px;
+}
+.active {
+    color: blue;
+}
+.no-active {
+    color: red;
+}

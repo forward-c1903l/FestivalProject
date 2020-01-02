@@ -109,6 +109,8 @@ $(document).ready(function(){
                             setTimeout(() => {
                                 location.reload();
                             }, 2000);
+                        } else {
+                            toastr.error('Error!');
                         }
                     }
                 });
@@ -135,6 +137,8 @@ $(document).ready(function(){
             success: function (res) {
                 if(res === 'Delete') {
                     window.location.href = 'religions.php';
+                } else {
+                    toastr.error(res);
                 }
             }
         });
