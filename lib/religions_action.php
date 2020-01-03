@@ -5,14 +5,14 @@
 
     function ShowAllFestivals() {
         global $conn;
-        $sql = "SELECT * FROM itemfestivals WHERE status = 1";
+        $sql = "SELECT * FROM itemfestivals WHERE status = 1 ORDER BY id DESC";
         $result = mysqli_query($conn, $sql);
         return $result;
     }
 
     function ShowFestivalsById($id) {
         global $conn;
-        $sql = "SELECT * FROM itemfestivals WHERE status = 1 and id_reli = '$id'";
+        $sql = "SELECT * FROM itemfestivals WHERE status = 1 and id_reli = '$id' ORDER BY id DESC";
         $result = mysqli_query($conn, $sql);
         return $result;
     }

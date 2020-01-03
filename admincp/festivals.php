@@ -31,6 +31,7 @@
                 <table>
                     <thead>
                         <tr>
+                            <th>Select</th>
                             <th>Image</th>
                             <th>Name</th>
                             <th>Religions</th>
@@ -52,12 +53,15 @@
                         ?>
                         <tr class='item-fes'>
                             <td>
+                                <input type="checkbox" name='items' value='<?php echo $row_all['id']?>'>
+                            </td>
+                            <td>
                                 <a href="festivals.php?ac=detail&id=<?php echo $row_all['id']?>">
                                     <img class="img-fluid" src="../<?php echo $row_all['avata_festival']?>" 
                                     alt="<?php echo $row_all['name_festival']?>">
                                 </a>
                             </td>
-                            <td> 
+                            <td class='name'> 
                                 <a href="festivals.php?ac=detail&id=<?php echo $row_all['id']?>" class='name-fes'><?php echo $row_all['name_festival']?></a>
                             </td>
                             <td> 
@@ -66,7 +70,7 @@
                             <td> 
                                 <span class='date-fes'><?php echo $row_all['date_of_the_festival']?></span>
                             </td>
-                            <td> 
+                            <td class='place'> 
                                 <span class='place-fes'><?php echo $row_all['place_festival']?></span>
                             </td>
                             <td>
@@ -82,6 +86,17 @@
 
                     </tbody>
                 </table>
+                <div class='action'>
+                    <div class='select-all'>
+                        <span><i class="fas fa-level-up-alt arrow"></i></span>
+                        <input type="checkbox" name='select_all'>
+                        <span>Select All</span>
+                    </div>
+                    <div class='delete'>
+                        <button type='button' name='delete_fes'><i class="far fa-trash-alt"></i></button>
+                        <span>Delete</span>
+                    </div>
+                </div>
             </div>
         </div>
 

@@ -67,7 +67,19 @@ border-bottom-width: 10px;
 .detail p{
     opacity: 0.7;
 }
-
+.dowload-file-pdf {
+    margin-top: 60px;
+}
+#dowload_pdf {
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+#dowload_pdf {
+    text-decoration: none;
+}
 
 @media screen and (max-width: 576px) {
     .similar-festival {

@@ -46,6 +46,18 @@
                         <div>
                             <?php echo $rowFestival['content_festival']?>
                         </div>
+                        <?php 
+                            $link_pdf = './upload/religions/'.$rowFestival['id_reli'].'/'.$rowFestival['id'].'/'.$rowFestival['id'].'.pdf';
+
+                        ?>
+                        <div class='dowload-file-pdf'>
+                            <span>
+                                File PDF Festivals: 
+                            </span>
+                            <a href="<?php echo $link_pdf?>" download id='dowload_pdf'>
+                            <i class="fas fa-cloud-download-alt"></i> DownLoad
+                            </a>
+                        </div>
                     </div>
 
                     <!--chi tiet them-->
