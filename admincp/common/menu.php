@@ -42,7 +42,7 @@
                     <div  class="toggle-click"><i class="fas fa-angle-right"></i></div>
                 </div>
                 <div class="child-menu-nav">
-                    <div class="child-nav"><a href="#">Add Category Book</a></div>
+                    <div class="child-nav"><a href="book-category.php">Category Book</a></div>
                     <div class="child-nav"><a href="#">All Books</a></div>
                     <div class="child-nav"><a href="">Add Books</a></div>
                 </div>

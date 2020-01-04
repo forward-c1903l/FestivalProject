@@ -51,7 +51,6 @@
         if(mysqli_num_rows($result) == 0) {
             return false;
         } else return true;
-        mysqli_close($conn);
     }
 
     function AddFestivals($name, $idReli, $date, $place, $des, $content, $hightlight, $best) {
@@ -66,7 +65,6 @@
             ('$idReli', '$name', '$date', '$place', '$des', '$content', '$hightlight', '$best', '$id_user')";
         $result = mysqli_query($conn, $sql);
         return mysqli_insert_id($conn);
-        mysqli_close($conn);
     }
 
     function AddImageFestival($ex, $id_reli, $id) {
@@ -165,13 +163,11 @@
         $sql = "SELECT id_reli, content_festival FROM itemfestivals WHERE id='$id'";
         $result = mysqli_query($conn, $sql);
         return $result;
-        mysqli_close($conn);
     }
 
     function UpdateUrlImg($id, $url) {
         global $conn;
         $sql = "UPDATE itemfestivals SET avata_festival = '$url' WHERE id='$id'";
         $result = mysqli_query($conn, $sql);
-        mysqli_close($conn);
     }
 ?>

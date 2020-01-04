@@ -16,7 +16,7 @@
         $idFestivalReceive = CheckIdFestivalGet();
         global $conn;
 
-        $sqlCheckIdIntoDB = "SELECT * FROM itemfestivals WHERE id = '$idFestivalReceive'";
+        $sqlCheckIdIntoDB = "SELECT * FROM itemfestivals WHERE id = '$idFestivalReceive' AND status = 1";
         $result = mysqli_query($conn, $sqlCheckIdIntoDB);
         $row = mysqli_num_rows($result);
         if($row == 0) {

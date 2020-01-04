@@ -31,7 +31,7 @@
     function ShowFestivalNews() {
         global $conn;
         
-        $sql = "SELECT * FROM itemfestivals ORDER BY id DESC LIMIT 0, 10";
+        $sql = "SELECT * FROM itemfestivals WHERE status = 1 ORDER BY id DESC LIMIT 0, 10";
         $result = mysqli_query($conn, $sql);
         return $result;
     }

@@ -4,7 +4,7 @@
     // Show Festivals Most (4)
     function ShowFestivalsMost4() {
         global $conn;
-        $sql = "SELECT * FROM itemfestivals WHERE highlight = 1 ORDER BY id DESC LIMIT 0, 4";
+        $sql = "SELECT * FROM itemfestivals WHERE highlight = 1 AND status = 1 ORDER BY id DESC LIMIT 0, 4";
         $result = mysqli_query($conn, $sql);
         return $result;
     };
@@ -12,7 +12,7 @@
     // Show Festivals Most (8)
     function ShowFestivalsMost8() {
         global $conn;
-        $sql = "SELECT * FROM itemfestivals WHERE highlight = 1 ORDER BY id DESC LIMIT 5, 19";
+        $sql = "SELECT * FROM itemfestivals WHERE highlight = 1 AND status = 1 ORDER BY id DESC LIMIT 5, 19";
         $result = mysqli_query($conn, $sql);
         return $result;
     }
@@ -20,7 +20,7 @@
     // Show The Best Festival (6)
     function ShowFestivalsBest6() {
         global $conn;
-        $sql = "SELECT * FROM itemfestivals WHERE the_best = 1 ORDER BY id DESC LIMIT 0, 6";
+        $sql = "SELECT * FROM itemfestivals WHERE the_best = 1 AND status = 1 ORDER BY id DESC LIMIT 0, 6";
         $result = mysqli_query($conn, $sql);
         return $result;
     }
@@ -29,7 +29,7 @@
     function SliderReligion() {
         global $conn;
 
-        $sql = "SELECT * FROM religions";
+        $sql = "SELECT * FROM religions WHERE status = 1";
         $result = mysqli_query($conn, $sql);
         return $result;
     }

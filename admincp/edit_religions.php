@@ -42,6 +42,29 @@
                         </div>
                         <button type="button" id='submit-edit-reli' class='btn-admin-religion'>Edit Religion</button>
                     </form>
+                    <div class='delete_main'>
+                        <div class='title-delete'>
+                            <span>If you want to delete this religion, please click below!</span>
+                        </div>
+                        <div class='delete-religion'>
+                            <button type='button' id='btn-delete-religion' class='btn-admin-religion btn-admin-delete' style='width: 100%'>Delete</button>
+                        </div>
+                        <div class='pop-up-delete'>
+                            <div class='title-pop-up'>
+                                <span>Are you sure you delete this religion ?</span>
+                            </div>
+                            <div class='pop-up-main'>
+                                <div class='row'>
+                                    <div class='col-md-6'>
+                                        <button type='button' id='yes-delete' class='btn-admin-religion btn-popup'>Yes</button>
+                                    </div>
+                                    <div class='col-md-6'>
+                                        <button type='button' id='no-delete' class='btn-admin-religion btn-popup'>No</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class='col-5'>
                     <div class='image-reli-edit'>
@@ -57,30 +80,6 @@
                 </div>
             </div>
         </div>
-        <div class='delete_main'>
-            <div class='title-delete'>
-                <span>If you want to delete this religion, please click below!</span>
-            </div>
-            <div class='delete-religion'>
-                <button type='button' id='btn-delete-religion' class='btn-admin-religion btn-admin-delete'>Delete</button>
-            </div>
-            <div class='pop-up-delete'>
-                <div class='title-pop-up'>
-                    <span>Are you sure you delete this religion ?</span>
-                </div>
-                <div class='pop-up-main'>
-                    <div class='row'>
-                        <div class='col-md-6'>
-                            <button type='button' id='yes-delete' class='btn-admin-religion btn-popup'>Yes</button>
-                        </div>
-                        <div class='col-md-6'>
-                            <button type='button' id='no-delete' class='btn-admin-religion btn-popup'>No</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </section>
 </div>
 <?php }?>

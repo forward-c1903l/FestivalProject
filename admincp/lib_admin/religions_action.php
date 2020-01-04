@@ -33,6 +33,7 @@
         global $conn;
         $sql = "UPDATE religions SET id_cate_religion = '$id_cate' WHERE id='$id'";
         $result = mysqli_query($conn, $sql);
+        mysqli_close($conn);
     }
 
     function AddReligionCategoryDB($name, $id) {
@@ -119,9 +120,12 @@
             $status_delete = unlink('./../'.$row_id_cate['avata_religion']);
         }
 
-        //delete folder
-        if (is_dir('./../upload/religions/'.$id)) {
-            rmdir('./../upload/religions/'.$id);
+        //check and delete folder
+        if(is_dir('./../upload/religions/'.$id)) {
+            if ($files = glob('./../upload/religions/'.$id."/*")) {
+            } else {
+                rmdir('./../upload/religions/'.$id);
+            }
         }
         mysqli_close($conn);
     }

@@ -109,8 +109,18 @@
         $resultFesOld = GetFestivalOld($id);
         $row_fes_old = mysqli_fetch_assoc($resultFesOld);
         if($row_fes_old['id_reli'] != $id_reli) {
-            rename("./../upload/religions/".$row_fes_old['id_reli'].'/'.$id, "./../upload/religions/".$id_reli.'/'.$id);
-            $changeReligion = true;
+            $folder_new = "./../upload/religions/".$id_reli.'/'.$id;
+            $folder_old = "./../upload/religions/".$row_fes_old['id_reli'].'/'.$id;
+
+            if(is_dir($folder_old)) {
+                if(!is_dir($folder_new)) {
+                    rename($folder_old, $folder_new);
+                    $changeReligion = true;
+                }
+            } else {
+                echo 'Error Folder';
+                die();
+            }
         }
 
 
@@ -137,20 +147,30 @@
             $location_img = './../upload/religions/'.$id_reli.'/'.$id.'/'.$name;
             $url = 'upload/religions/'.$id_reli.'/'.$id.'/'.$name;
 
-            //Update URL image 
+            //Update religion in url image
             $resultUpdateImg = UpdateUrlImg($id, $url);
 
         } else {
             $location_img = './../'.$resultEdit;
         }
 
+        $change_img = false;
+
         if(isset($_FILES['file_image'])) {
+            $change_img = true;
+            $text = explode('.', $_FILES['file_image']['name']);
+            $ex = end($text);
+            $location_img_new = './../upload/religions/'.$id_reli.'/'.$id.'/'.$id.'.'.$ex;
+            $url_new = 'upload/religions/'.$id_reli.'/'.$id.'/'.$id.'.'.$ex;
             if(is_file($location_img)) {
                 $status_delete = unlink($location_img);
-                move_uploaded_file($_FILES['file_image']['tmp_name'], $location_img);
+                move_uploaded_file($_FILES['file_image']['tmp_name'], $location_img_new);
             } else {
-                move_uploaded_file($_FILES['file_image']['tmp_name'], $location_img);
+                move_uploaded_file($_FILES['file_image']['tmp_name'], $location_img_new);
             }
+
+            //Update URL image 
+            $resultUpdateImg = UpdateUrlImg($id, $url_new);
         }
 
 
@@ -163,7 +183,7 @@
             }
             $pdf = new FPDF();
             $pdf->AddPage('A4');
-            $pdf->Image($location_img,25,10,250,180);
+            $change_img == true ? $pdf->Image($location_img_new,25,10,250,180) : $pdf->Image($location_img,25,10,250,180);
             $pdf->Ln(190);
             
             $pdf->SetFont('Arial','B',24);

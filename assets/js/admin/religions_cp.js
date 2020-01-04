@@ -60,7 +60,7 @@ $(document).ready(function(){
         let ImgEdit = $('#img_reli_edit').prop('files')[0];
         
         if(valNameEditDf === valNameEdit && valSttEditDf === valSttEdit && typeof(ImgEdit) === 'undefined') {
-            console.log('khong doi');
+            
         } else {
             let error = {};
             //Check Name empty
