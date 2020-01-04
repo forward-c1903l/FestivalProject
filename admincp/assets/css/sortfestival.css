@@ -1,0 +1,89 @@
+
+
+.religions .header .name_header {
+    color: #e74c3c;
+    font-size: 26px;
+}
+
+.time-and-location{
+    font-weight: bold;
+}
+
+.sidebar-header {
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 3px solid black ;
+    text-transform: uppercase;
+    position: relative;
+    padding: 5px;
+    padding-left: 0;
+    color: #e74c3c;
+}
+.sidebar-text {
+    color: black;
+    text-align: left;
+    padding-left: 0px;
+    font-size: 15px;
+}
+
+.sidebar-text:hover{
+    color: #e74c3c;
+}
+
+.festival-news {
+    padding: 15px 0;
+    
+}
+
+.festival-news .img-festival-news {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.fes-suggest {
+    padding: 20px 0;
+}
+
+.author-time {
+    font-size: 11px;
+    text-align: left;
+
+}
+.author-time  ul{
+    padding-left: 0px;
+}
+.a-t {
+    font-size: 12px;
+    color: gray;
+    text-align: left;
+    list-style: none;
+}
+
+.time-fetival {
+    color: #888;
+    font-size: 14px;
+}
+
+.des-fetival {
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.btn-festival {
+    padding: 5px 10px;
+}
+
+.hoverable{
+    color: #333;
+}
+
+.hoverable:hover {
+    color: #e74c3c;
+}
+
+@media screen and (max-width: 1023px) {
+    .blog-festival {
+        margin-top: 20px;
+    }
+}

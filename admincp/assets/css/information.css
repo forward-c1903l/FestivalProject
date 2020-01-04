@@ -1,0 +1,245 @@
+span.a{
+    display: inline-block;
+}
+.item-list {
+    list-style: none;
+}
+.item-list li {
+    padding: 5px 0;
+}
+.item-list li:hover {
+    background: #ececec;
+}
+.active {
+    background: #ececec;
+}
+.active a{
+    color: #000 !important;
+}
+.item-list li a{
+    color: #4a4a4a;
+}
+.item-list li a span{
+    font-size: 14px;
+}
+.item-list li a:hover{
+   text-decoration: none;
+   color: #000;
+}
+.left-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.user-ava{
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+}
+.user-name{
+    width: 70%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.user-name h6{
+    margin-top: 5px;
+    font-size: 16px;
+    color: #000;
+}
+.user-name span {
+    color: #4a4a4a;
+    font-size: 13px;
+}
+.title-main-infor {
+    margin-bottom: 20px;
+}
+.title-main-infor h4{
+    font-size: 18px;
+}
+.title-main-infor span{
+    font-size: 15px;
+    color: #4a4a4a;;
+}
+.box-of-info{
+    padding: 20px;
+    background-color: white;
+}
+h3.header_info {
+    /* color: skyblue; */
+    text-decoration: underline;
+}
+
+.control-label{
+    padding-top: 6px;
+    font-size: 15px;
+}
+
+.box1 {
+    padding-top: 20px;
+}
+.form-control {
+    font-size: 15px;
+}
+
+.bigbox {
+    padding: 40px;
+}
+.error-form {
+    margin-top: 5px;
+}
+.error-form .error{
+    color: red;
+    font-size: 13px;
+    font-weight: 600;
+}
+.ava-item{
+    width: 35px;
+    height: 35px;
+    font-size: 15px;
+    padding: 10px;
+    color: #999;
+}
+table{
+    border-collapse: collapse ;
+    width: 100%;
+    box-sizing: border-box;
+    display: table;
+    border-spacing:2px ;
+    border-color:2px solid gray;
+
+}
+ th{
+    min-width: 130px;
+    color: rgb(120, 120, 120);
+    font-size: 15px;
+    font-weight: 400;
+    /* text-align: center; */
+    padding: 20px 15px;
+}
+thead{
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr{
+    display: table-row;
+    border-bottom: 1px solid rgb(244, 244, 244);
+}
+tbody{
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+td{
+    min-width: 130px;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: left;
+    padding: 20px 15px;
+}
+.history-list{
+    background-color: rgb(255, 255, 255);
+    min-height: 400px;
+    border-radius: 4px;
+    padding: 1px;
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,.1);
+    box-shadow: 0 0 20px rgba(0,0,0,.1);
+}
+.box-invoice {
+    background: white;
+}
+.image-inv img {
+    width: 45px;
+    height: 45px;
+}
+.name-inv {
+    width: 205px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.ip-quantity {
+    width: 50px;
+    padding: 0 5px;
+}
+.nofi{
+    margin-bottom: 20px;
+}
+.nofi-no-edit h6{
+    font-size: 14px;
+    font-weight: 600;
+    color: tomato;
+}
+.nofi-edit {
+    font-size: 14px;
+    font-weight: 600;
+    color: #007bff;
+}
+.total {
+    padding: 20px;
+}
+.total #total-invoice{
+    float: right;
+    color: tomato;
+    font-weight: 600;
+}
+
+.pop-up-delete {
+    width: 350px;
+    height: 200px;
+    position: fixed;
+    z-index: 999999;
+    background: #fff;
+    border: 1px solid #ddd;
+    opacity: 1;
+    top: 30%;
+    left: 50%;
+    padding: 30px 20px;
+    display: none;
+    margin-left: -160px;
+    margin-top: -40px;
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,.1);
+    box-shadow: 0 0 20px rgba(0,0,0,.1);
+}
+.title-popup {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.title-popup h6{
+    line-height: 25px;
+    font-weight: 600;
+    color: tomato;
+}
+.btn-open-popup {
+    background: none;
+    color: #007bff;
+    border: none;
+}
+.btn-open-popup:active {
+    outline: none;
+}
+.btn-popup {
+    display: block;
+    width: 100%;
+    background: #ffc107;
+    border:none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 4px;
+}
+.btn-popup:hover {
+    text-decoration: none;
+    color: white;
+    background: #d39e00;
+}
+.btn-close-popup {
+    background: #007bff !important;
+}
+.btn-close-popup:hover {
+    background: #0069d9 !important;
+}

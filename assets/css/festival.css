@@ -80,9 +80,25 @@ border-bottom-width: 10px;
 #dowload_pdf {
     text-decoration: none;
 }
-
+#content_festival {
+    padding-right:50px;
+}
+#content_festival img{
+    max-width: 100%;
+}
 @media screen and (max-width: 576px) {
     .similar-festival {
-        margin-top: 20px;
+        margin-top: 40px;
+    }
+    #content_festival {
+        padding:0px 20px;
+    }
+}
+@media screen and (min-width: 577px) and (max-width: 1023px) {
+    #content_festival {
+        padding-right:15px;
+    }
+    .similar-festival {
+        margin-top: 50px;
     }
 }

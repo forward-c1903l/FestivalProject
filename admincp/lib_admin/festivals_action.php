@@ -159,4 +159,19 @@
         return $row['avata_festival'];
         mysqli_close($conn);
     }
+
+    function GetFestivalOld($id) {
+        global $conn;
+        $sql = "SELECT id_reli, content_festival FROM itemfestivals WHERE id='$id'";
+        $result = mysqli_query($conn, $sql);
+        return $result;
+        mysqli_close($conn);
+    }
+
+    function UpdateUrlImg($id, $url) {
+        global $conn;
+        $sql = "UPDATE itemfestivals SET avata_festival = '$url' WHERE id='$id'";
+        $result = mysqli_query($conn, $sql);
+        mysqli_close($conn);
+    }
 ?>

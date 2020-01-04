@@ -42,7 +42,7 @@
 
                 <!--noi dung-->
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-lg-8" id='content_festival'>
                         <div>
                             <?php echo $rowFestival['content_festival']?>
                         </div>
@@ -61,7 +61,7 @@
                     </div>
 
                     <!--chi tiet them-->
-                    <div class="col-md-4 similar-festival">
+                    <div class="col-lg-4 similar-festival">
                         <div class="margin-bottom-30">
                             <div class="line">
                                 <h5>SIMILAR FESTIVALS</h5>
