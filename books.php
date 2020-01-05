@@ -30,7 +30,7 @@
                                 <h3><?php echo $row_book['name_book']?></h3>
                             </div>
                             <div class="author-of-book">
-                                <span>Author: <a href="#">Travel Planet Public</a></span>
+                                <span>Author: <?php echo $row_book['author']?></span>
                             </div>
                             <div class="price-of-book">
                                 <span class='price'><?php echo number_format($row_book['price_book'],0,",",".")?> VND</span>

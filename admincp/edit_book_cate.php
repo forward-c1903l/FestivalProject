@@ -10,7 +10,7 @@
         $_SESSION['ad_id_book_cate_edit'] = $row['id'];
 ?>
 
-<div class='edit_book_cate'>
+<div class='edit_book_cate' id='edit'>
     <div class='title'>
         <h6>Edit Book Category</h6>
     </div>

@@ -58,7 +58,7 @@
                                         ?>
                                         <tr>
                                             <td> 
-                                                <a href="book-category.php?ac=edit&id=<?php echo $row_all['id']?>"><?php echo $row_all['name_book_cate']?></a>
+                                                <a href="book-category.php?ac=edit&id=<?php echo $row_all['id']?>#edit"><?php echo $row_all['name_book_cate']?></a>
                                             </td>
                                             <td>
                                                 <span class='stt-religion'>
@@ -66,7 +66,7 @@
                                                 </span>    
                                             </td>
                                             <td>
-                                                <a href="book-category.php?ac=edit&id=<?php echo $row_all['id']?>"><i class="far fa-edit"></i></a>
+                                                <a href="book-category.php?ac=edit&id=<?php echo $row_all['id']?>#edit"><i class="far fa-edit"></i></a>
                                             </td>
                                         </tr>
                                         <?php }}?>

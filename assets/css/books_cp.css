@@ -1,0 +1,140 @@
+#books_admin {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.admin-books {
+    width: 80%;
+    margin-left: auto;
+    padding: 40px;
+    background: white;
+}
+.title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.title h6 {
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #6c757d;
+}
+.item-books a{
+    color: black;
+    font-size: 15px;
+}
+.name {
+    width: 250px;
+}
+.price-books {
+    color: #e74c3c;
+    font-size: 14px;
+}
+.active {
+    color: red;
+    font-size: 14px;
+}
+.no-active {
+    color: blue;
+    font-size: 14px;
+}
+.group {
+    position: relative;
+    padding: 20px;
+}
+.error {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 5px;
+    color: red;
+}
+#date_posted {
+    color: lightslategray;
+    font-size: 15px;
+}
+#user_post {
+    color: red;
+}
+.group label {
+    width: 80px;
+}
+.action {
+    margin-top: 10px;
+    padding: 0 25px;
+    display: flex;
+}
+.input_books {
+    padding: 5px 10px;
+    width: calc(100% - 100px);
+    border-radius: 3px;
+    border: 1px solid lightgray;
+    font-size: 14px;
+}
+.input_books:focus {
+    outline: none;
+}
+.action span{
+    font-size: 14px;
+}
+.select-all {
+    margin-right: 30px;
+}
+.action .arrow{
+    transform: rotate3d(0, -362, 0, 178deg);
+    color: red;
+    padding: 0 5px;
+    font-size: 20px;
+}
+.delete button {
+    background: none;
+    border: none;
+    color: blue;
+}
+.lb_file {
+    width: 100% !important;
+    text-align: center;
+    background: #39D2B4;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: bold;
+    font-size: .9em;
+    transition: all .4s;
+}
+.ip_file {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    bottom: 30%;
+    width: 100% !important;
+    opacity: 0.01;
+    cursor: pointer;
+}
+.ip_file:hover + .lb_file,
+.ip_file:focus + .lb_file{
+    background:#34495E;
+}
+.btn-admin-books {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background: #007bff !important;
+    padding: 10px 20px;
+}
+.btn-admin-books:hover {
+    background: #0056b3 !important;
+}
+.btn-admin-books:focus {
+    outline: none;
+}
+.image_book {
+    border: 8px solid lightgray;
+    border-radius: 10px;
+    padding: 0;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0.46875rem 2.1875rem rgba(31,10,6,0.03), 0 0.9375rem 1.40625rem rgba(31,10,6,0.03), 0 0.25rem 0.53125rem rgba(31,10,6,0.05), 0 0.125rem 0.1875rem rgba(31,10,6,0.03);
+    -moz-box-shadow: 0 0.46875rem 2.1875rem rgba(31,10,6,0.03), 0 0.9375rem 1.40625rem rgba(31,10,6,0.03), 0 0.25rem 0.53125rem rgba(31,10,6,0.05), 0 0.125rem 0.1875rem rgba(31,10,6,0.03);
+    box-shadow: 0 1.6875rem 2.1875rem rgba(31,10,6,0.03), 0 0.9375rem 1.40625rem rgba(31,10,6,0.03), 0 0.25rem 0.53125rem rgba(31,10,6,0.05), 0 0.125rem 0.1875rem rgba(31,10,6,0.03);
+}
+.image_book img{
+    width: 100%;
+}

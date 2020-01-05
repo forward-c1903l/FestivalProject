@@ -123,7 +123,6 @@
             
             return mysqli_num_rows($result) == 0 ?  false : $result;
         }
-        mysqli_close($conn);
     }
 
     function ReligionOfFestival($id_reli) {
@@ -131,7 +130,6 @@
         $sql = "SELECT name_religion FROM religions WHERE id='$id_reli'";
         $result = mysqli_query($conn, $sql);
         return $result;
-        mysqli_close($conn);
     }
 
     function UpdateFestivals($id, $name, $idReli, $date, $place, $des, $content, $hightlight, $best, $stt) {
@@ -155,7 +153,6 @@
         $result_img = mysqli_query($conn, $sql);
         $row = mysqli_fetch_assoc($result_img);
         return $row['avata_festival'];
-        mysqli_close($conn);
     }
 
     function GetFestivalOld($id) {

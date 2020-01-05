@@ -9,7 +9,6 @@ $(document).ready(function() {
             method: 'post',
             data: {proceed: {status: true, payment: paymentMethod}}
         }).done(function(data) {
-            console.log(data);
             let dataNew = JSON.parse(data);
 
             if(dataNew['status']) {

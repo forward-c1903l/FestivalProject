@@ -12,7 +12,7 @@
 
     function ShowAllBooks() {
         global $conn;
-        $sql = "SELECT * FROM books WHERE status = 1";
+        $sql = "SELECT * FROM books WHERE status = 1 ORDER BY id DESC";
         $result = mysqli_query($conn, $sql);
         return $result;
     }

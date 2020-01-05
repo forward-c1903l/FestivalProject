@@ -11,11 +11,12 @@
         $resultReli = CheckIdReligion($id_reli);
         if($resultReli) {
             //check folder religion
-            $dir = "./../upload/religions/".$_POST['reli'];
-            if(!file_exists($dir)){
-                echo "Error Religion";
-                die();
+            $dir = "./../upload/religions/".$id_reli;
+            if (!is_dir($dir)) {
+                mkdir($dir);
             }
+        } else {
+            die();
         }
 
         //insert data
@@ -29,12 +30,6 @@
             $_POST['hightlight'],
             $_POST['best']
         );
-
-        //check folder religion.if not there will create a new folder religion
-        $dir = "./../upload/religions/".$id_reli;
-        if (!is_dir($dir)) {
-            mkdir($dir);
-        }
 
         // create folder
         $dir = "./../upload/religions/".$id_reli.'/'.$resultAdd;

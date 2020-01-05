@@ -43,8 +43,8 @@
                 </div>
                 <div class="child-menu-nav">
                     <div class="child-nav"><a href="book-category.php">Category Book</a></div>
-                    <div class="child-nav"><a href="#">All Books</a></div>
-                    <div class="child-nav"><a href="">Add Books</a></div>
+                    <div class="child-nav"><a href="books.php">All Books</a></div>
+                    <div class="child-nav"><a href="books.php?ac=add">Add Books</a></div>
                 </div>
             </div>
             <div class="wrap-title-nav">
