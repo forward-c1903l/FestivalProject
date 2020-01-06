@@ -1,0 +1,160 @@
+#invoice_ad {
+    padding: 50px 0;
+}
+.admin-invoice {
+    width: 80%;
+    margin-left: auto;
+}
+.item-invoice {
+    position: relative;
+}
+.check-admin {
+    position: relative;
+}
+.point {
+    position: absolute;
+    top: 2%;
+    width: 10px;
+    height: 10px;
+    background: red;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+table th{
+    text-transform: uppercase;
+}
+table td{
+    font-size: 14px;
+}
+.handle {
+
+}
+.delivery {
+    color: royalblue;
+}
+.error-deli {
+    color: red;
+}
+.success {
+    color: #009900;
+}
+.detail-invoice {
+    background: white;
+    padding: 50px;
+}
+.title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.title-block {
+
+}
+.title-block h6{
+    font-size: 16px;
+}
+.group-detail {
+    padding: 2px 0;
+}
+.group-detail #code{
+    font-weight: 600;
+    font-size: 16px;
+}
+.group-detail #date{
+    color: #6c757d;
+}
+.group-detail #total{
+    color: #e74c3c;
+    font-weight: 600;
+}
+.group-detail span{
+    font-size: 15px;
+}
+.group-detail .first{
+    font-weight: 600;
+}
+.title h6 {
+    font-size: 25px;
+    color: #6c757d;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.user_invoice span{
+    font-size: 14px;
+}
+.point {
+    animation-name: point;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+}
+.handle {
+    font-weight: 600;
+}
+.pro, .deli {
+    color: blue;
+}
+.succ {
+    color: #009900;
+}
+.fail, .can {
+    color: red;
+}
+.group {
+    padding: 20px;
+}
+table td {
+    font-size: 14px;
+}
+
+thead {
+    font-weight: 600;
+}
+.name-book {
+    width: 150px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.name a{
+    color: black;
+}
+.name:hover{
+    color: black;
+}
+.action .hd{
+    font-size: 15px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    line-height: 30px;
+}
+.btn-handle {
+    width: 100%;
+    border: none;
+    padding: 10px 15px;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.btn-pro {
+    background: #007bff;
+}
+.btn-pro:hover {
+    background: #0069d9;
+}
+.btn-deli-succ {
+    background: #00AE68;
+}
+.btn-deli-succ:hover {
+    background: #21825B;
+}
+.btn-deli-fail {
+    background: red;
+}
+.btn-deli-fail:hover {
+    background: #CC0000;
+}
+@keyframes point {
+    from {transform: scale(1.2);}
+    to {transform: scale(0.9);}
+}

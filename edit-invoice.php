@@ -31,5 +31,7 @@
     if(isset($_POST['delete'])) {
         $idDel = $_POST['delete'];
         $resultCheckDelete= DeleteInvoice($idInvoice, $idLogin, $idDel);
+
+        $checkProductInvoice = CheckProductInInvoice($idInvoice);
     }
 ?>

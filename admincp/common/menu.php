@@ -49,11 +49,11 @@
             </div>
             <div class="wrap-title-nav">
                 <div data-id="4" class="main-name-nav">
-                    <a href="#">Bills</a> 
+                    <a href="#">Invoices</a> 
                     <div  class="toggle-click"><i class="fas fa-angle-right"></i></div>
                 </div>
                 <div class="child-menu-nav">
-                    <div class="child-nav"><a href="#">All Bills</a></div>
+                    <div class="child-nav"><a href="invoice.php">All Invoice</a></div>
                 </div>
             </div>
             <div class="wrap-title-nav">

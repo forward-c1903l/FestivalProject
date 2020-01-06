@@ -169,16 +169,25 @@ td{
 .nofi{
     margin-bottom: 20px;
 }
-.nofi-no-edit h6{
-    font-size: 14px;
+.nofi h6{
     font-weight: 600;
-    color: tomato;
+    font-size: 14px;
 }
 .nofi-edit {
-    font-size: 14px;
     font-weight: 600;
     color: #007bff;
 }
+.nofi-deli h6{
+    font-weight: 600;
+    color: #007bff !important;
+}
+.nofi-succ h6{
+    color: #009900;
+}
+.nofi-fail h6, .nofi-cancel h6{
+    color: red;
+}
+
 .total {
     padding: 20px;
 }
@@ -242,4 +251,19 @@ td{
 }
 .btn-close-popup:hover {
     background: #0069d9 !important;
+}
+.process {
+    color: #0069d9;
+}
+.deli {
+    color: #0069d9;
+}
+.succ {
+    color: #009900;
+}
+.failed {
+    color: red;
+}
+.cancel {
+    color: red;
 }

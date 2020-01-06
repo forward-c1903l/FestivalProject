@@ -77,11 +77,11 @@
                                 </div>
                                 <form action="">
                                     <div class='payment-group'>
-                                        <input type="radio" name='payment' id='pic' value='pic' checked/>
+                                        <input type="radio" name='payment' id='pic' value='0' checked/>
                                         <span class='des-payment'>Pay In Cash </span>
                                     </div>
                                     <div class='payment-group'>
-                                        <input type="radio" name='payment' id='vm' value='vm'/>
+                                        <input type="radio" name='payment' id='vm' value='1'/>
                                         <span class='des-payment'>Visa/MasterCard</span>
                                     </div>
                                 </form>

@@ -39,14 +39,28 @@
                     <td><?php echo number_format($row_invoice['total'],0,",",".")?> VND</td>
                     <td>
                         <?php 
+                            $class = '';
+                            $stt = '';
                             if($row_invoice['handle'] == 0){
-                                echo "Processing...";
+                                $class = 'process';
+                                $stt  = "Processing...";
                             } else if($row_invoice['handle'] == 1) {
-                                echo 'Delivery';
+                                $class = 'deli';
+                                $stt  = "Delivery...";
                             } else if($row_invoice['handle'] == 2) {
-                                echo 'Delivered';
+                                $class = 'succ';
+                                $stt  = "Successful delivery";
+                            } else if($row_invoice['handle'] == 3) {
+                                $class = 'failed';
+                                $stt  = "Delivery Failed";
+                            } else if($row_invoice['handle'] == 4) {
+                                $class = 'cancel';
+                                $stt  = "Invoice Canceled";
                             }
                         ?>
+                        <span class='<?php echo $class?>'>
+                            <?php echo $stt?>
+                        </span>
                     </td>
                     <td style='text-align: center'>
                         <a href="information.php?page=inv-detail&id=<?php echo $row_invoice['id']?>"><i class="fas fa-receipt"></i>

@@ -46,7 +46,7 @@
         }
 
         //update total
-        $sqlTotal = "UPDATE invoice SET total = '$total' WHERE id='$id'";
+        $sqlTotal = "UPDATE invoice SET total = '$total', admin_check = 0 WHERE id='$id'";
         $resultTotal = mysqli_query($conn, $sqlTotal);
 
         return $total;
@@ -123,5 +123,16 @@
             echo "Success";
         }
 
+    }
+
+    function CheckProductInInvoice($id) {
+        global $conn;
+        $sql = "SELECT * FROM invoice_details WHERE id_invoice= '$id'";
+        $result = mysqli_query($conn, $sql);
+        if(mysqli_num_rows($result) == 0) {
+            // set handle = 4 
+            $sql = "UPDATE invoice SET handle = 4 WHERE id= '$id'";
+            $result = mysqli_query($conn, $sql);    
+        }
     }
 ?>

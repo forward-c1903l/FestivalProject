@@ -29,10 +29,22 @@
         <h4>Code Order: <span>#<?php echo $checkId['id']?></span></h4>
     </div>
     <?php 
-        if(!$resultHandle) {
+        if($resultHandle == 1) {
     ?>
-    <div class='nofi-no-edit nofi'>
-        <h6>Your order is in an editable state!</h6>
+    <div class='nofi nofi-deli'>
+        <h6>Your order is on delivery!</h6>
+    </div>
+    <?php } else if($resultHandle == 2) {?>
+    <div class='nofi nofi-succ'>
+        <h6>Your order has been delivered successfully!</h6>
+    </div>
+    <?php } else if($resultHandle == 3) {?>
+    <div class='nofi nofi-fail'>
+        <h6>Your order delivery failed!</h6>
+    </div>
+    <?php } else if($resultHandle == 4) {?>
+    <div class='nofi nofi-cancel'>
+        <h6>Your order has been canceled!</h6>
     </div>
     <?php } else {?>
         <div class='nofi-edit nofi'>
@@ -48,7 +60,7 @@
                     <th>Price</th>
                     <th>Quantity</th>
                     <?php 
-                    if($resultHandle) {
+                    if($resultHandle == 0) {
                     ?>
                     <th style='text-align: center'>Delete</th>
                     <?php }?>
@@ -79,7 +91,7 @@
                     <td><?php echo number_format($row_item_invoice['price_book'],0,",",".")?> VND</td>
 
                     <?php 
-                    if($resultHandle) {
+                    if($resultHandle == 0) {
                     ?>
 
                     <td>

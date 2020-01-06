@@ -45,10 +45,6 @@
         $sql = "SELECT handle FROM invoice WHERE id='$idInvoice'";
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_assoc($result);
-        if($row['handle'] == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return $row['handle'];
     }
 ?>
