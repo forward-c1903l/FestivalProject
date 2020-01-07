@@ -1,4 +1,10 @@
-<?php ?>
+<?php 
+    //check admin.vi da require o moi trang nen khong can require
+    $check_admin = CheckAdmin();
+    
+    require('./lib_admin/menu_action.php');
+    $check_invoice = CheckTotalInvoiceAdminCheck();
+?>
 
 <nav class="container-menu-dashboard">
     <div class="logo-menu">
@@ -55,17 +61,25 @@
                 <div class="child-menu-nav">
                     <div class="child-nav"><a href="invoice.php">All Invoice</a></div>
                 </div>
+                <?php 
+                    if($check_invoice != 0) {
+                ?>
+                    <div class='total-invoice'>
+                        <span><?php echo $check_invoice?></span>
+                    </div>
+                    <?php }?>
             </div>
+            <?php if($check_admin) {?>
             <div class="wrap-title-nav">
                 <div data-id="5" class="main-name-nav">
-                    <a href="#">User</a> 
+                    <a href="#">User and Staff</a> 
                     <div  class="toggle-click"><i class="fas fa-angle-right"></i></div>
                 </div>
                 <div class="child-menu-nav">
-                    <div class="child-nav"><a href="">All User</a></div>
-                    <div class="child-nav"><a href="">Decentralized User</a></div>
+                    <div class="child-nav"><a href="user.php">All User</a></div>
                 </div>
             </div>
+            <?php }?>
         </div>
     </div>
 </nav>

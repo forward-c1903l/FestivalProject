@@ -111,6 +111,7 @@
 
         if(mysqli_num_rows($result) == 0) {
             return false;
+            die();
         } else {
             $row_delete = mysqli_fetch_assoc($result);
             //delete item
@@ -130,9 +131,11 @@
         $sql = "SELECT * FROM invoice_details WHERE id_invoice= '$id'";
         $result = mysqli_query($conn, $sql);
         if(mysqli_num_rows($result) == 0) {
-            // set handle = 4 
-            $sql = "UPDATE invoice SET handle = 4 WHERE id= '$id'";
-            $result = mysqli_query($conn, $sql);    
+            //delete invoice
+            $sqlDel = "DELETE FROM invoice WHERE id='$id'";
+            $result = mysqli_query($conn, $sqlDel);
+
+            return true;
         }
     }
 ?>

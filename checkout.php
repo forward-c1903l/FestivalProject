@@ -5,6 +5,9 @@
     require('./common/bottom.php');
     Top('Check Out', "./assets/css/checkout.css");
 
+    //save sesstion menu
+    $_SESSION['menu'] = 1001;
+
     // Check User Login
     $resultUserLogin = CheckUserLogin();
     // Check Cart session

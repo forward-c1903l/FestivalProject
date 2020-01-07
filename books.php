@@ -5,6 +5,10 @@
     require('./common/top.php');
     require('./common/bottom.php');
     Top('Book Store', "./assets/css/books.css");
+
+    //save sesstion menu
+    $_SESSION['menu'] = 3;
+
     // Check Id Book 
     $check = CheckIdBookHeader();
 ?>

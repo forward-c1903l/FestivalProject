@@ -5,6 +5,9 @@
     require('./common/top.php');
     require('./common/bottom.php');
     Top('Trang Chu', "./assets/css/home.css");
+
+    //save sesstion menu
+    $_SESSION['menu'] = 1;
 ?>
 
 

@@ -6,6 +6,9 @@
     require('./common/bottom.php');
     Top('Religions', './assets/css/sortfestival.css');
 
+    //save sesstion menu
+    $_SESSION['menu'] = 2;
+
     // check Id Header
     $check = CheckIdFestivalHeader();
 ?>

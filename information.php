@@ -7,6 +7,9 @@
 
     Top('Information', "./assets/css/information.css");
 
+    //save sesstion menu
+    $_SESSION['menu'] = 1000;
+
     // Check Page
     $checkPage = CheckPageGet();
 

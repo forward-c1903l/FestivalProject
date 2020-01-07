@@ -62,6 +62,7 @@
     color: black;
 }
 .wrap-title-nav{
+    position: relative;
     padding-left: 40px;
     line-height: 4rem;
     border-bottom: 1px solid #f5f5f5;
@@ -126,7 +127,29 @@
     margin-right: 0;
     padding-right:0.4rem ;
 }
-
+.total-invoice {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 20px;
+    height: 20px;
+    color: white;
+    background: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,.1);
+    box-shadow: 0 0 20px rgba(0,0,0,.1);
+    animation-name: point;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+}
+.total-invoice span{
+    line-height: 20px !important;
+    font-size: 13px;
+}
  /* scroll bar */
 
 ::-webkit-scrollbar {
@@ -145,4 +168,8 @@
   
 ::-webkit-scrollbar-thumb:hover {
     background: #f4f4f4; 
+}
+@keyframes point {
+    from {transform: scale(1.2);}
+    to {transform: scale(0.9);}
 }

@@ -89,12 +89,13 @@
         //check id reli and check folder reli
         $resultReli = CheckIdReligion($id_reli);
         if($resultReli) {
-            //check folder religion
-            $dir = "./../upload/religions/".$_POST['reli'];
-            if(!file_exists($dir)){
-                echo "Error Religion";
-                die();
+            //check folder category
+            $dir = "./../upload/religions/".$id_reli;
+            if (!is_dir($dir)) {
+                mkdir($dir);
             }
+        } else {
+            die();
         }
 
         $id = $_SESSION['festival_current'];

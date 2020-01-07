@@ -4,6 +4,9 @@
     require('./common/top.php');
     require('./common/bottom.php');
     Top('Book Store', "./assets/css/cart.css");
+
+    //save sesstion menu
+    $_SESSION['menu'] = 1001;
 ?>
 
 <body>

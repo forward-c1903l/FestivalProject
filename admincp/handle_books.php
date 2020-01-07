@@ -92,7 +92,7 @@
                 }
             } else {
                 echo 'Error Folder';
-                // die();
+                die();
             }
         }
 

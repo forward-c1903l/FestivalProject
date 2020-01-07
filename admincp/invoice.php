@@ -16,7 +16,7 @@
 
 ?>
 <body>
-    <?php include('common/menu.php') ?>
+    <?php include('common/header.php') ?>
     <main class='main_cp'>
         <section id='invoice_ad'>
             <?php 
@@ -134,6 +134,7 @@
 
             <?php }?>
         </section>
+        <?php include('common/menu.php') ?>
     </main>
 </body>
 <?php 

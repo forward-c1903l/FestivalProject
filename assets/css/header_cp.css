@@ -1,0 +1,25 @@
+#header_admin{
+    padding-top: 30px;
+}
+.header_block {
+    width: 80%;
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px 0;
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,.1);
+    box-shadow: 0 0 20px rgba(0,0,0,.1);
+    background: #2E9AFE;
+    color: white;
+}
+.header_group {
+    margin: 0 10px;
+}
+.header_group a{
+    color: white;
+    font-size: 14px;
+}
+.header_group a:hover{
+    text-decoration: none;
+    color: #EEEEEE;
+}

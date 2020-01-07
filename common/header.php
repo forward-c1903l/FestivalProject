@@ -15,7 +15,7 @@
                     $resultMenu = Category();
                     while($row_menu = mysqli_fetch_array($resultMenu)) {
                 ?>
-                        <li class="nav-item festival-nav">
+                        <li class="nav-item festival-nav <?php echo $_SESSION['menu'] == $row_menu['id'] ? 'active-header': '';?>">
                             <a class="nav-link" href="<?php echo $row_menu['link_cate']?>"><?php echo $row_menu['name_cate']?></a>
                             <?php 
                                 $resultChildren = GetCategoryChildren($row_menu['id']);
@@ -38,7 +38,7 @@
                 <?php 
                     isset($_SESSION['userLogin']) ? require('header-login.php'): require('header-default.php');
                 ?>
-                <li class='nav-item festival-nav'>
+                <li class='nav-item festival-nav <?php echo $_SESSION['menu'] == 1001 ? 'active-header': '';?>'>
                     <a href="cart.php" class='nav-link'>
                         <i class="fas fa-shopping-cart"></i>
                         <span class='cart-total'>(<?php echo GetTotalItemCart()?>)</span>

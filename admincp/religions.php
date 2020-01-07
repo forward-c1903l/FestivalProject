@@ -15,6 +15,7 @@
 
 ?>
 <body>
+    <?php include('common/header.php') ?>
     <?php include('common/menu.php') ?>
     <main class='main_cp'>
         <section class='religion'>

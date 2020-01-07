@@ -1,4 +1,4 @@
-<li class="nav-item festival-nav">
+<li class="nav-item festival-nav <?php echo $_SESSION['menu'] == 1000 ? 'active-header': '';?>">
     <a class="nav-link" href="information.php?id=<?php echo $_SESSION['userLogin']['id']?>">
         <i class="fas fa-user-tie"></i>
     </a>

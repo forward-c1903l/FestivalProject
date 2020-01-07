@@ -108,7 +108,7 @@ $(document).ready(function(){
 
                             setTimeout(() => {
                                 location.reload();
-                            }, 2000);
+                            }, 1300);
                         } else {
                             toastr.error('Error!');
                         }

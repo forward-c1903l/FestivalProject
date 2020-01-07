@@ -132,7 +132,7 @@ $(document).ready(function(){
                         setTimeout(() => {
                             location.reload();
                             window.scrollTo({top: 0});
-                        }, 2000);
+                        }, 1300);
                     } else {
                         toastr.error('Error!');
                     }
@@ -232,7 +232,7 @@ $(document).ready(function(){
                             setTimeout(() => {
                                 location.reload();
                                 window.scrollTo({top: 0});
-                            }, 2000);
+                            }, 1300);
                         } else {
                             toastr.error(res);
                         }
@@ -280,7 +280,7 @@ $(document).ready(function(){
                         setTimeout(() => {
                             location.reload();
                             window.scrollTo({top: 0 });
-                        }, 2000);
+                        }, 1300);
                     } else {
                         toastr.error(res);
                     }

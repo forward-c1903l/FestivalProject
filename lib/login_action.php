@@ -27,18 +27,28 @@
                 // The username exists, so the error username is empty
                 $error['username'] = '';
 
-                // Check when the username and password
-                if(!empty($password)) {
-                    $rowUser = mysqli_fetch_assoc($result);
-                    $passwordMD5 = md5($password);
+                //check status = 1
+                $sqlCheckUserStt = "SELECT username, password FROM user WHERE username = '$username' AND status = 1";
+                $result_stt = mysqli_query($conn, $sqlCheckUserStt);
+                if(mysqli_num_rows($result_stt) == 0) {
+                    $error['username'] = 'Your account has been locked !';
+                } else {
+                    $error['username'] = '';
 
-                    if($rowUser['password'] == $passwordMD5) {
-                        $error['password'] = '';
-                    } else {
-                        $error['password'] = 'Password is wrong !';
-                        $complete = false;
+                    // Check when the username and password
+                    if(!empty($password)) {
+                        $rowUser = mysqli_fetch_assoc($result);
+                        $passwordMD5 = md5($password);
+
+                        if($rowUser['password'] == $passwordMD5) {
+                            $error['password'] = '';
+                        } else {
+                            $error['password'] = 'Password is wrong !';
+                            $complete = false;
+                        }
                     }
                 }
+        
             }
         }
 

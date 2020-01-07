@@ -16,6 +16,7 @@
 
 ?>
 <body>
+    <?php include('common/header.php') ?>
     <?php include('common/menu.php') ?>
     <main class='main_cp'>
         <section id='books_admin'>

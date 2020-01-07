@@ -59,3 +59,7 @@ nav ul li a{
     font-size: 14px;
     color: red;
 }
+
+.active-header .nav-link{
+color: #007bff !important;
+}

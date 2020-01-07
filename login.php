@@ -5,6 +5,9 @@
     require('./common/bottom.php');
     Top('Login', "./assets/css/user.css");
 
+    //save sesstion menu
+    $_SESSION['menu'] = 1000;
+
     // Check UserLogin Session. If so, will switch to account information page
     if(isset($_SESSION['userLogin'])) {
         header('location:information.php');
