@@ -69,9 +69,18 @@
                     </div>
                     <?php }?>
             </div>
-            <?php if($check_admin) {?>
             <div class="wrap-title-nav">
                 <div data-id="5" class="main-name-nav">
+                    <a href="#">FeedBack</a> 
+                    <div  class="toggle-click"><i class="fas fa-angle-right"></i></div>
+                </div>
+                <div class="child-menu-nav">
+                    <div class="child-nav"><a href="feedback.php">All Feedback</a></div>
+                </div>
+            </div>
+            <?php if($check_admin) {?>
+            <div class="wrap-title-nav">
+                <div data-id="6" class="main-name-nav">
                     <a href="#">User and Staff</a> 
                     <div  class="toggle-click"><i class="fas fa-angle-right"></i></div>
                 </div>

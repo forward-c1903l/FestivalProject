@@ -170,39 +170,36 @@
         }
 
 
-        //check change content
-        if($row_fes_old['content_festival'] != $_POST['content']) {
-            //check file pdf
-            $location_pdf = './../upload/religions/'.$id_reli.'/'.$id.'/'.$id.'.pdf';
-            if(is_file($location_pdf)) {
-                $status_delete = unlink($location_pdf);
-            }
-            $pdf = new FPDF();
-            $pdf->AddPage('A4');
-            $change_img == true ? $pdf->Image($location_img_new,25,10,250,180) : $pdf->Image($location_img,25,10,250,180);
-            $pdf->Ln(190);
-            
-            $pdf->SetFont('Arial','B',24);
-            $pdf->SetTextColor(0,0,0);
-            $pdf->MultiCell(270,11,$_POST['name'],0,1);
-            $pdf->Ln(1);
-
-            $pdf->SetFont('Arial','',11);
-            $pdf->SetTextColor(105,105,105);
-            $pdf->MultiCell(270,11,$_POST['date'].' / '.$_POST['place'],0,1);
-            $pdf->Ln(2);
-            
-            $pdf->SetFont('Arial','B',15);
-            $pdf->SetTextColor(51,51,51);
-            $pdf->MultiCell(270,8,$_POST['des'],0,1);
-            $pdf->Ln(3);
-
-            $pdf->SetFont('Arial','',10);
-            $pdf->SetTextColor(51,51,51);
-            $str = strip_tags($_POST['content']);
-            $pdf->Write(5, $str);
-            $pdf->Output('F', $location_pdf);
+        //check file pdf
+        $location_pdf = './../upload/religions/'.$id_reli.'/'.$id.'/'.$id.'.pdf';
+        if(is_file($location_pdf)) {
+            $status_delete = unlink($location_pdf);
         }
+        $pdf = new FPDF();
+        $pdf->AddPage('A4');
+        $change_img == true ? $pdf->Image($location_img_new,25,10,250,180) : $pdf->Image($location_img,25,10,250,180);
+        $pdf->Ln(190);
+        
+        $pdf->SetFont('Arial','B',24);
+        $pdf->SetTextColor(0,0,0);
+        $pdf->MultiCell(270,11,$_POST['name'],0,1);
+        $pdf->Ln(1);
+
+        $pdf->SetFont('Arial','',11);
+        $pdf->SetTextColor(105,105,105);
+        $pdf->MultiCell(270,11,$_POST['date'].' / '.$_POST['place'],0,1);
+        $pdf->Ln(2);
+        
+        $pdf->SetFont('Arial','B',15);
+        $pdf->SetTextColor(51,51,51);
+        $pdf->MultiCell(270,8,$_POST['des'],0,1);
+        $pdf->Ln(3);
+
+        $pdf->SetFont('Arial','',10);
+        $pdf->SetTextColor(51,51,51);
+        $str = strip_tags($_POST['content']);
+        $pdf->Write(5, $str);
+        $pdf->Output('F', $location_pdf);
 
         echo 'Success';
     }

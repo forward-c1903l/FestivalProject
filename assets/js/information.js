@@ -140,8 +140,12 @@ $(document).ready(function() {
                     $.ajax({
                         url: formSubmit.attr('action'),
                         method: formSubmit.attr('method'),
-                        data: {userComplete: userChange}
+                        data: {userComplete: userChange},
+                        beforeSend: function() {
+                            $.LoadingOverlay("show");
+                        },
                     }).done(function(data) {
+                        $.LoadingOverlay("hide");
                         if(data === 'Success') {
                             // remove error
                             $('.error').text('');
@@ -150,7 +154,7 @@ $(document).ready(function() {
 
                             setTimeout(() => {
                                 location.reload();
-                            }, 1500);
+                            }, 1300);
                         }
                     })
                 }

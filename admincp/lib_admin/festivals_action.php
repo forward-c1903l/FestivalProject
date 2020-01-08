@@ -157,7 +157,7 @@
 
     function GetFestivalOld($id) {
         global $conn;
-        $sql = "SELECT id_reli, content_festival FROM itemfestivals WHERE id='$id'";
+        $sql = "SELECT id_reli, content_festival, status FROM itemfestivals WHERE id='$id'";
         $result = mysqli_query($conn, $sql);
         return $result;
     }

@@ -1,0 +1,20 @@
+.about_block {
+    width: 80%;
+    margin: auto;
+}
+.map-com {
+    width: 400px;
+    height: 500px;
+}
+.title-about {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.title-about h5{
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.group-infor {
+    margin: 10px 0;
+}
