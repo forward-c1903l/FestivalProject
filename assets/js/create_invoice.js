@@ -24,6 +24,8 @@ $(document).ready(function() {
                     let textErr = `<span class='error'>The ${item.name} name book does not exceed the purchase limit. Please try again later !</span>`;
                     $('.error-payment').append(textErr);
                 }
+            } else if(!dataNew['status'] && dataNew['error'] === 'payment') {
+                toastr.error(dataNew['msg']);
             } else {
                 
                 if(dataNew['duplicate']) {

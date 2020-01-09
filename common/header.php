@@ -4,7 +4,7 @@
 
 <header>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top nav-bg">
-        <a class="navbar-brand" href="#"><img class="img-fluid logonav" src="./upload/images/logo.png" width="180px" /></a>
+        <a class="navbar-brand" href="index.php"><img class="img-fluid logonav" src="./upload/images/logo.png" width="180px" /></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

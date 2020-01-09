@@ -14,14 +14,20 @@
 
     function AllInvoiceNew() {
         global $conn;
-        $sql = "SELECT * FROM user INNER JOIN invoice ON invoice.id_user_buy = user.id WHERE handle = 0 ORDER BY date DESC";
+        $sql = "SELECT payment_method.*, user.*, invoice.* FROM user 
+                                INNER JOIN invoice ON invoice.id_user_buy = user.id 
+                                INNER JOIN payment_method ON payment_method.id = invoice.id_payment_method
+                                WHERE handle = 0 ORDER BY date DESC";
         $result = mysqli_query($conn, $sql);
         return $result;
     }
 
     function AllInvoice() {
         global $conn;
-        $sql = "SELECT * FROM user INNER JOIN invoice ON invoice.id_user_buy = user.id WHERE handle != 0 ORDER BY date DESC";
+        $sql = "SELECT payment_method.*, user.*, invoice.* FROM user 
+                                INNER JOIN invoice ON invoice.id_user_buy = user.id 
+                                INNER JOIN payment_method ON payment_method.id = invoice.id_payment_method
+                                WHERE handle != 0 ORDER BY handle ASC, date DESC";
         $result = mysqli_query($conn, $sql);
         return $result;
     }

@@ -14,7 +14,7 @@
 
     function AllBookCategory() {
         global $conn;
-        $sql = "SELECT * FROM book_category";
+        $sql = "SELECT * FROM book_category ORDER BY id DESC";
         $result = mysqli_query($conn, $sql);
 
         return mysqli_num_rows($result) == 0 ? 0 : $result;
@@ -23,6 +23,14 @@
 
     function AddBookCate($name) {
         global $conn;
+
+        // Check Name Book Cate
+        $sql = "SELECT * FROM book_category WHERE name_book_cate = '$name'";
+        $result = mysqli_query($conn, $sql);
+        if(mysqli_num_rows($result) > 0) {
+            echo "This Book Category Name already exists!";
+            die();
+        }
 
         //Add Name Book Category
         $sql = "INSERT INTO book_category (name_book_cate, id_cate_book_category) values ('$name', 3)";
@@ -74,6 +82,27 @@
 
     function UpdateNameStt($id, $name, $stt){
         global $conn;
+        // Check Name Book Category
+        //neu name new va id co trong database => chi thay doi stt
+        $sql = "SELECT * FROM book_category WHERE name_book_cate = '$name' AND id='$id'";
+        $result = mysqli_query($conn, $sql);
+        if(mysqli_num_rows($result) > 0) {
+            //update stt
+            $sql = "UPDATE book_category SET status='$stt' WHERE id='$id'";
+            $result = mysqli_query($conn, $sql);
+        } else {
+            //check name new co trong database chua 
+            $sql = "SELECT * FROM book_category WHERE name_book_cate = '$name'";
+            $result = mysqli_query($conn, $sql);
+            if(mysqli_num_rows($result) > 0) {
+                echo "This book category name already exists!";
+                die();
+            } else {
+                $sql = "UPDATE book_category SET name_book_cate='$name', status='$stt' WHERE id='$id'";
+                $result = mysqli_query($conn, $sql);
+            }
+        }
+
         $sql = "UPDATE book_category SET name_book_cate='$name', status='$stt' WHERE id='$id'";
         $result = mysqli_query($conn, $sql);
 

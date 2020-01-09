@@ -38,6 +38,8 @@ $(document).ready(function(){
                             $('#name_reli').val('');
                             $('#img_reli').val('');
                             toastr.success('You have successfully entered!');
+                        } else {
+                            toastr.error(res);
                         }
                     }
                 });
@@ -110,7 +112,7 @@ $(document).ready(function(){
                                 location.reload();
                             }, 1300);
                         } else {
-                            toastr.error('Error!');
+                            toastr.error(res);
                         }
                     }
                 });

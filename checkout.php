@@ -34,6 +34,7 @@
 
                                 <div class='no-login' id='no_login'>
                                     <h6> Don't have an account yet? <a href="register.php">Please register before checkout!</a></h6>
+                                    <h6> If you already have an account <a href="login.php">Log in here!</a></h6>
                                 </div>
 
                             <?php 
@@ -79,14 +80,22 @@
                                     <span class='des'>Please select the type of payment method</span>
                                 </div>
                                 <form action="">
-                                    <div class='payment-group'>
-                                        <input type="radio" name='payment' id='pic' value='0' checked/>
-                                        <span class='des-payment'>Pay In Cash </span>
-                                    </div>
-                                    <div class='payment-group'>
-                                        <input type="radio" name='payment' id='vm' value='1'/>
-                                        <span class='des-payment'>Visa/MasterCard</span>
-                                    </div>
+                                    <?php 
+                                        $result_payment = PaymentMethod();
+                                        while($row = mysqli_fetch_array($result_payment)) {
+                                            if($row['id'] == 1) {
+                                    ?>
+                                        <div class='payment-group'>
+                                            <input type="radio" name='payment' id='ptc' value='<?php echo $row['id']?>' checked/>
+                                            <span class='des-payment'><?php echo $row['name_payment']?></span>
+                                        </div>
+                                            <?php } else {?>
+                                                <div class='payment-group'>
+                                                    <input type="radio" name='payment' id='vm' value='<?php echo $row['id']?>'/>
+                                                    <span class='des-payment'><?php echo $row['name_payment']?></span>
+                                                </div>
+                                            <?php }?>
+                                        <?php }?>
                                 </form>
                             </div> 
                         </div>

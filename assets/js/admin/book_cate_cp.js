@@ -30,6 +30,8 @@ $(document).ready(function(){
                         setTimeout(() => {
                             location.reload();
                         }, 2000);
+                    } else {
+                        toastr.error(res);
                     }
                 }
             });
@@ -80,7 +82,7 @@ $(document).ready(function(){
                                 location.reload();
                             }, 2000);
                         } else {
-                            toastr.error('Error!');
+                            toastr.error(res);
                         }
                     }
                 });

@@ -26,4 +26,10 @@
         $result = mysqli_query($conn, $sql);
         return $result;
     }
+    function PaymentMethod() {
+        global $conn;
+        $sql = "SELECT * FROM payment_method WHERE status = 1 ORDER BY id ASC";
+        $result = mysqli_query($conn, $sql);
+        return $result;
+    }
 ?>

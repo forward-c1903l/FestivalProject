@@ -1,6 +1,13 @@
 <?php 
     require('dbConn.php');
 
+    function CheckPayment($id_payment) {
+        global $conn;
+        $sql = "SELECT * FROM payment_method WHERE id='$id_payment' AND status = 1";
+        $result = mysqli_query($conn, $sql);
+        return mysqli_num_rows($result) == 0 ? false : true ;
+    }
+
     function CheckInventory() {
         global $conn;
         $errorInven = array();
@@ -32,6 +39,17 @@
         $resultInven = CheckInventory();
 
         if(empty($resultInven)) {
+            $resultCheckPayment = CheckPayment($payment);
+            if(!$resultCheckPayment) {
+                $completed = [
+                    'status' => false,
+                    'error' => 'payment',
+                    'msg' => 'Error Payment'
+                ];
+                echo json_encode($completed);
+                die();
+            }
+
             date_default_timezone_set('Asia/Ho_Chi_Minh');// set date Vietnam
             $date = date('Y-m-d H:i:s');// get date current
 
@@ -39,7 +57,7 @@
 
             $numberId = rand(100000,9999999);// get id random
 
-            $sql = "INSERT INTO invoice (id, date, payment_method, total, id_user_buy) values ('$numberId', '$date', '$payment', 0, '$idUser')";
+            $sql = "INSERT INTO invoice (id, date, id_payment_method, total, id_user_buy) values ('$numberId', '$date', '$payment', 0, '$idUser')";
             $result = mysqli_query($conn, $sql);
 
 

@@ -22,19 +22,13 @@
                     <div class="newsletter-title">NEWSLETTER</div>
                     <hr>
                     <p>Subscribe & receive the latest news & updates for the top festivals nearby that you want to know about!</p>
-                    <button type="button" class="btn btn-primary">Subsrible</button>
                 </div>
                 <div class="col-lg-4 socical-net-work">
                     <div class="newsletter-title">OUR SOCIAL NETWORK 
                     </div>
                     <hr>
                     <p>Follow Us if you want to be kept up to date about what's going on in the big world of festivals!</p>
-                    <div class="social-media-footer d-flex">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                    </div>
-                    <a class="contact-footer" href="#">Contact Us</a>
+                    <a class="contact-footer" href="contact.php">Contact Us</a>
                 </div>
             </div>
         </div>

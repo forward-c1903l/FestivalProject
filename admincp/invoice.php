@@ -45,7 +45,7 @@
                             <?php 
                                 $resultAllHandleNew = AllInvoiceNew();
                                 while($row_all_new = mysqli_fetch_array($resultAllHandleNew)) {
-                                    $payment = $row_all_new['payment_method'] == 0 ? 'Pay In Cash': 'Visa/Master Cash';
+                                    
                             ?>
                             <tr class='item-invoice'>
                                 <td>
@@ -57,7 +57,7 @@
                                     <span class='date-invoice'><?php echo $row_all_new['date']?></span>
                                 </td>
                                 <td> 
-                                    <span class='payment'><?php echo $payment?></span>
+                                    <span class='payment'><?php echo $row_all_new['name_payment']?></span>
                                 </td>
                                 <td> 
                                     <span class='total'><?php echo number_format($row_all_new['total'],0,",",".")?></span>
@@ -84,7 +84,6 @@
                             <?php 
                                 $resultAllHandle = AllInvoice();
                                 while($row_all = mysqli_fetch_array($resultAllHandle)) {
-                                    $payment = $row_all['payment_method'] == 0 ? 'Pay In Cash': 'Visa/Master Cash';
                                     if($row_all['handle'] == 1) {
                                         $class = 'delivery';
                                         $stt = 'Delivery...';
@@ -110,7 +109,7 @@
                                     <span class='date-invoice'><?php echo $row_all['date']?></span>
                                 </td>
                                 <td> 
-                                    <span class='payment'><?php echo $payment?></span>
+                                    <span class='payment'><?php echo $row_all['name_payment']?></span>
                                 </td>
                                 <td> 
                                     <span class='total'><?php echo number_format($row_all['total'],0,",",".")?></span>

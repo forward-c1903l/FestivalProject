@@ -125,7 +125,7 @@ $(document).ready(function(){
                             window.scrollTo({top: 0});
                         }, 1500);
                     } else {
-                        toastr.error('Error!');
+                        toastr.error(res);
                     }
                 }
             });

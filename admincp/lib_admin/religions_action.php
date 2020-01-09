@@ -16,7 +16,7 @@
 
     function AllReligions() {
         global $conn;
-        $sql = "SELECT * FROM religions";
+        $sql = "SELECT * FROM religions ORDER BY id DESC";
         $result = mysqli_query($conn, $sql);
         return $result;
     }
@@ -47,6 +47,15 @@
 
     function AddNameReligionFirst($name) {
         global $conn;
+
+        // Check Name Religion
+        $sql = "SELECT name_religion FROM religions WHERE name_religion = '$name'";
+        $result = mysqli_query($conn, $sql);
+        if(mysqli_num_rows($result) > 0) {
+            echo "This religions name already exists!";
+            die();
+        }
+
 
         //Add Name Religion
         $sql = "INSERT INTO religions (name_religion, id_cate_religion) values ('$name', 2)";
@@ -80,9 +89,29 @@
 
     function UpdateNameStt($id, $name, $stt){
         global $conn;
-        $sql = "UPDATE religions SET name_religion='$name', status='$stt' WHERE id='$id'";
-        $result = mysqli_query($conn, $sql);
 
+        // Check Name Religion
+        //neu name new va id co trong database => chi thay doi stt
+        $sql = "SELECT name_religion FROM religions WHERE name_religion = '$name' AND id='$id'";
+        $result = mysqli_query($conn, $sql);
+        if(mysqli_num_rows($result) > 0) {
+            //update stt
+            $sql = "UPDATE religions SET status='$stt' WHERE id='$id'";
+            $result = mysqli_query($conn, $sql);
+        } else {
+            //check name new co trong database chua 
+            $sql = "SELECT name_religion FROM religions WHERE name_religion = '$name'";
+            $result = mysqli_query($conn, $sql);
+            if(mysqli_num_rows($result) > 0) {
+                echo "This religions name already exists!";
+                die();
+            } else {
+                $sql = "UPDATE religions SET name_religion='$name', status='$stt' WHERE id='$id'";
+                $result = mysqli_query($conn, $sql);
+            }
+        }
+
+        
         // Get Id Category of the religion
         $sql = "SELECT id_cate_religion, avata_religion FROM religions WHERE id='$id'";
         $result = mysqli_query($conn, $sql);

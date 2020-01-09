@@ -61,6 +61,11 @@
             values 
             ('$name', '$author', '$price', '$des', '$content', '$inventory', '$idCate', '$id_user', '$date')";
         $result = mysqli_query($conn, $sql);
+        if ($result) {
+            echo "New record created successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
         return mysqli_insert_id($conn);
     }
 
