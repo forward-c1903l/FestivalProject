@@ -9,7 +9,11 @@
 }
 .item-book-store{
     margin: 1rem 0;
-    padding: 0.5rem;
+    padding: 0.7rem;
+}
+.item-book-store img{
+    width: 200px;
+    height: 300px;
 }
 .title-content-book {
     text-overflow: ellipsis;
