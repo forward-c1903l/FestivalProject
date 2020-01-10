@@ -12,19 +12,9 @@
 
         $idItem = $_POST['itemChange']['idItem'];
         $valItem = $_POST['itemChange']['valItem'];
-        $quantityDefault = $_POST['itemChange']['valDefault'];
 
-        if($valItem == 0) {
-            $compEdit = [
-                'status' => false,
-                'msg' => 'Please enter quantity !'
-            ];
-            echo json_encode($compEdit);
-        } else {
-            // Check to see if iditem is in the current invoice
-            $resultCheck = CheckIdItemInvoice($idInvoice, $idLogin, $idItem, $valItem, $quantityDefault);
-
-        }
+        // Check to see if iditem is in the current invoice
+        $resultCheck = CheckIdItemInvoice($idInvoice, $idLogin, $idItem, $valItem);
     }
 
     //DELETE ITEM INVOICE

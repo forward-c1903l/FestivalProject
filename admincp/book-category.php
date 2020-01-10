@@ -38,7 +38,7 @@
                                 </div>
                             </div>
                             <?php 
-                                if($resultGet == 1) include('edit_book_cate.php');;
+                                if($resultGet == 1) include('edit_book_cate.php');
                             ?>
                         </div>
                         <div class='col-lg-6 block_book_cate'>

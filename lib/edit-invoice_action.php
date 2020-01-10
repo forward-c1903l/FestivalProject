@@ -52,7 +52,7 @@
         return $total;
     }
 
-    function CheckIdItemInvoice($idinv, $idUs, $idit, $val, $qDefault) {
+    function CheckIdItemInvoice($idinv, $idUs, $idit, $val) {
         global $conn;
 
         $sql = "SELECT * FROM 
@@ -66,7 +66,12 @@
         $result = mysqli_query($conn, $sql);
 
         if(mysqli_num_rows($result) == 0) {
-            return false;
+            $compEdit = [
+                'status' => false,
+                'error' => 'invoice',
+                'msg' => 'Unable to identify the item!'
+            ];
+            echo json_encode($compEdit);
         } else {
             //check inventory item
             $row_item = mysqli_fetch_assoc($result);
@@ -78,7 +83,7 @@
                 $result = mysqli_query($conn, $sql);
 
                 $handletotal = HandleTotal($idinv);
-                $handleinven = HandleInven($idit, $row_item['inventory'], $val, $qDefault);
+                $handleinven = HandleInven($idit, $row_item['inventory'], $val, $row_item['quantity']);
 
                 $compEdit = [
                     'status' => true,

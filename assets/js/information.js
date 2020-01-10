@@ -176,10 +176,6 @@ $(document).ready(function() {
     // ---------------------- Invoice --------------------- //
     // change quantity
     let ipQuanIn = $('.ip-quantity');
-    let quantityDefault = 0;
-    ipQuanIn.on('focusin', function() {
-        quantityDefault = $(this).val();
-    })
 
     ipQuanIn.change(function(e) {
 
@@ -187,28 +183,38 @@ $(document).ready(function() {
         let valIpQuanIn = e.target.value;
         let name = e.target['name'];
 
-        $.ajax({
-            url: 'edit-invoice.php',
-            method: 'post',
-            data: {itemChange: {idItem: name, valItem: valIpQuanIn, valDefault: quantityDefault}}
-        }).done(function(data) {
-            let dataNew = JSON.parse(data);
+        if(valIpQuanIn == 0) {
+            toastr.error('Please enter quantity !');
+            setTimeout(() => {
+                location.reload();
+            }, 600);
+        } else {
+            $.ajax({
+                url: 'edit-invoice.php',
+                method: 'post',
+                data: {itemChange: {idItem: name, valItem: valIpQuanIn}}
+            }).done(function(data) {
+                let dataNew = JSON.parse(data);
+    
+                if(dataNew['status']) {
+                    //Update total
+                    let total = `${dataNew['msg']} VND`;
+                    $('#total-invoice').text(total);
+                    toastr.success('You have successfully updated your invoice !');
+                } else if(!dataNew['status'] && dataNew['error'] === 'inventory'){
+                    $this.val(quantityDefault);
+    
+                    let textError = `Item ${dataNew['name']} exceeds the allowed limit.Please try again!`;
+                    toastr.error(textError);
+                } else if(!dataNew['status'] && dataNew['error'] === 'invoice') {
+                    toastr.error(dataNew['msg']);
+                    setTimeout(() => {
+                        location.reload();
+                    }, 1300);
+                }
+            })
+        }
 
-            if(dataNew['status']) {
-                //Update total
-                let total = `${dataNew['msg']} VND`;
-                $('#total-invoice').text(total);
-                toastr.success('You have successfully updated your invoice !');
-            } else if(!dataNew['status'] && dataNew['error'] === 'inventory'){
-                $this.val(quantityDefault);
-
-                let textError = `Item ${dataNew['name']} exceeds the allowed limit.Please try again!`;
-                toastr.error(textError);
-            }
-            else {
-                alert(dataNew['msg']);
-            }
-        })
     })
 
     // delete

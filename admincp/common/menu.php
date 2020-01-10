@@ -89,6 +89,15 @@
                 </div>
             </div>
             <?php }?>
+            <div class="wrap-title-nav">
+                <div data-id="7" class="main-name-nav">
+                    <a href="#">Setting</a> 
+                    <div  class="toggle-click"><i class="fas fa-angle-right"></i></div>
+                </div>
+                <div class="child-menu-nav">
+                    <div class="child-nav"><a href="general.php">General</a></div>
+                </div>
+            </div>
         </div>
     </div>
 </nav>

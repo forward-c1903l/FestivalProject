@@ -108,7 +108,7 @@
                     <span class='error' id='error_place'></span>
                 </div>
                 <div class='group'>
-                    <label for="des_festival">Describle: </label>
+                    <label for="des_festival">Describe: </label>
                     <input type="text" name='des_festival' id='des_festival' class='input_festival'/>
                     <span class='error' id='error_des'></span>
                 </div>

@@ -83,18 +83,11 @@
                                     <?php 
                                         $result_payment = PaymentMethod();
                                         while($row = mysqli_fetch_array($result_payment)) {
-                                            if($row['id'] == 1) {
                                     ?>
                                         <div class='payment-group'>
-                                            <input type="radio" name='payment' id='ptc' value='<?php echo $row['id']?>' checked/>
+                                            <input type="radio" name='payment' value='<?php echo $row['id']?>' checked/>
                                             <span class='des-payment'><?php echo $row['name_payment']?></span>
                                         </div>
-                                            <?php } else {?>
-                                                <div class='payment-group'>
-                                                    <input type="radio" name='payment' id='vm' value='<?php echo $row['id']?>'/>
-                                                    <span class='des-payment'><?php echo $row['name_payment']?></span>
-                                                </div>
-                                            <?php }?>
                                         <?php }?>
                                 </form>
                             </div> 
