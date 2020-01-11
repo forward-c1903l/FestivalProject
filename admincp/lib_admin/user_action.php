@@ -4,7 +4,7 @@
 
     function AllUserStaff() {
         global $conn;
-        $sql = "SELECT * FROM role INNER JOIN user ON user.id_role = role.id ORDER BY user.id_role, user.id DESC";
+        $sql = "SELECT * FROM role INNER JOIN user ON user.id_role = role.id WHERE role.id != 1 ORDER BY user.id_role, user.id DESC";
         $result = mysqli_query($conn, $sql);
         return $result;
     }

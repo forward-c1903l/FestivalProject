@@ -5,6 +5,7 @@ $(document).ready(function(){
     config.entities_latin = false;
     CKEDITOR.replace('content_festival', config);
 
+    
     let festivalDefault = {
         name: $('#name_festival').val(),
         reli: $('#name_reli').val(),
@@ -18,12 +19,16 @@ $(document).ready(function(){
         best: $('#best_fes').val()
     };
 
+    
     let statusDefault = $('#stt_fes').val();
     
+
     function CheckValueChangeFirst(fesFir, fesCurr, fileImage, stt) {
         if(JSON.stringify(fesFir) === JSON.stringify(fesCurr) && typeof(fileImage) === 'undefined' && statusDefault === stt) {
             return false;
-        } else return true;
+        } else {
+            return true;
+        }
     }
 
     function CheckErrorValue() {
@@ -52,7 +57,7 @@ $(document).ready(function(){
             errorFestival['place'] = 'Please Enter Place';
         }
         if(festival.des === '') {
-            errorFestival['des'] = 'Please Enter Describle';
+            errorFestival['des'] = 'Please Enter Describe';
         }
         if(festival.dataContent === '') {
             errorFestival['content'] = 'Please Enter Content';
@@ -68,6 +73,7 @@ $(document).ready(function(){
 
     // ADD FESTIVALS
     $('#submit-add-fes').click(function() {
+        $('.error').text('');
         let result = CheckErrorValue();
 
         let fileImg = $('#img_fes').prop('files')[0];
@@ -85,7 +91,6 @@ $(document).ready(function(){
         }
 
         if(jQuery.isEmptyObject(result['errorFestival'])) {
-            $('.error').text('');
             let  formFestival = new FormData();
             
             let {
@@ -140,12 +145,10 @@ $(document).ready(function(){
             });
 
         } else {
-            result['errorFestival']['name'] ? $("#error_name").text(result['errorFestival']['name']) : $("#error_name").text('');
-            result['errorFestival']['date'] ? $("#error_date").text(result['errorFestival']['date']) : $("#error_date").text('');
-            result['errorFestival']['place'] ? $("#error_place").text(result['errorFestival']['place']) : $("#error_date").text('');
-            result['errorFestival']['des'] ? $("#error_des").text(result['errorFestival']['des']) : $("#error_date").text('');
-            result['errorFestival']['content'] ? $("#error_content").text(result['errorFestival']['content']) : $("#error_date").text('');
-            result['errorFestival']['image'] ? $("#error_image").text(result['errorFestival']['image']) : $("#error_date").text('');
+            for(let key in result['errorFestival']) {
+                $(`#error_${key}`).text(result['errorFestival'][key]);
+            }
+            window.scrollTo({top: 100});
         }
     })
 
@@ -153,7 +156,7 @@ $(document).ready(function(){
 
     //-------------------EDIT---------------------//
     $("#submit-edit-fes").click(function() {
-        
+        $('.error').text('');
         // Check Value 
         let result = CheckErrorValue();
         
@@ -241,12 +244,10 @@ $(document).ready(function(){
             }
 
         } else {
-            result['errorFestival']['name'] ? $("#error_name").text(result['errorFestival']['name']) : $("#error_name").text('');
-            result['errorFestival']['date'] ? $("#error_date").text(result['errorFestival']['date']) : $("#error_date").text('');
-            result['errorFestival']['place'] ? $("#error_place").text(result['errorFestival']['place']) : $("#error_date").text('');
-            result['errorFestival']['des'] ? $("#error_des").text(result['errorFestival']['des']) : $("#error_date").text('');
-            result['errorFestival']['content'] ? $("#error_content").text(result['errorFestival']['content']) : $("#error_date").text('');
-            result['errorFestival']['image'] ? $("#error_image").text(result['errorFestival']['image']) : $("#error_date").text('');
+            for(let key in result['errorFestival']) {
+                $(`#error_${key}`).text(result['errorFestival'][key]);
+            }
+            window.scrollTo({top: 100});
         }
 
     })

@@ -44,6 +44,11 @@ $(document).ready(function(){
         }
         if(books.price === '') {
             errorBooks['price'] = 'Please Enter Price Book';
+        } else {
+            let regex=/^[0-9]+$/;
+            if(!regex.test(books.price)) {
+                errorBooks['price'] = 'Please enter number !';
+            }
         }
         if(books.des === '') {
             errorBooks['des'] = 'Please Enter Describle Book';
@@ -53,6 +58,11 @@ $(document).ready(function(){
         }
         if(books.inventory === '') {
             errorBooks['inventory'] = 'Please Enter Inventory Book';
+        } else {
+            let regex=/^[0-9]+$/;
+            if(!regex.test(books.inventory)) {
+                errorBooks['inventory'] = 'Please enter number !';
+            }
         }
 
         let result = {
@@ -65,6 +75,7 @@ $(document).ready(function(){
 
     // ADD BOOKS
     $('#submit-add-books').click(function() {
+        $('.error').text('');
         let result = CheckErrorValue();
 
         let fileImg = $('#img_books').prop('files')[0];
@@ -130,19 +141,16 @@ $(document).ready(function(){
                 }
             });
         } else {
-            result['errorBooks']['name'] ? $("#error_name").text(result['errorBooks']['name']) : $("#error_name").text('');
-            result['errorBooks']['author'] ? $("#error_author").text(result['errorBooks']['author']) : $("#error_author").text('');
-            result['errorBooks']['price'] ? $("#error_price").text(result['errorBooks']['price']) : $("#error_price").text('');
-            result['errorBooks']['des'] ? $("#error_des").text(result['errorBooks']['des']) : $("#error_des").text('');
-            result['errorBooks']['inventory'] ? $("#error_inventory").text(result['errorBooks']['inventory']) : $("#error_inventory").text('');
-            result['errorBooks']['content'] ? $("#error_content").text(result['errorBooks']['content']) : $("#error_content").text('');
-            result['errorBooks']['image'] ? $("#error_image").text(result['errorBooks']['image']) : $("#error_image").text('');
+            for(let key in result['errorBooks']) {
+                $(`#error_${key}`).text(result['errorBooks'][key]);
+            }
+            window.scrollTo({top: 100});
         }
     })
 
     //-------------------EDIT---------------------//
     $("#submit-edit-books").click(function() {
-            
+        $('.error').text('');
         // Check Value 
         let result = CheckErrorValue();
         
@@ -163,7 +171,6 @@ $(document).ready(function(){
         let status = $('#stt_book').val(); //value stt current
 
         if(jQuery.isEmptyObject(result['errorBooks'])) {
-            $('.error').text('');
 
             let resultCheckChange = CheckValueChangeFirst(booksDefault, result.books, fileImg, status);
 
@@ -224,13 +231,10 @@ $(document).ready(function(){
             }
 
         } else {
-            result['errorBooks']['name'] ? $("#error_name").text(result['errorBooks']['name']) : $("#error_name").text('');
-            result['errorBooks']['author'] ? $("#error_author").text(result['errorBooks']['author']) : $("#error_author").text('');
-            result['errorBooks']['price'] ? $("#error_price").text(result['errorBooks']['price']) : $("#error_price").text('');
-            result['errorBooks']['des'] ? $("#error_des").text(result['errorBooks']['des']) : $("#error_des").text('');
-            result['errorBooks']['inventory'] ? $("#error_inventory").text(result['errorBooks']['inventory']) : $("#error_inventory").text('');
-            result['errorBooks']['content'] ? $("#error_content").text(result['errorBooks']['content']) : $("#error_content").text('');
-            result['errorBooks']['image'] ? $("#error_image").text(result['errorBooks']['image']) : $("#error_image").text('');
+            for(let key in result['errorBooks']) {
+                $(`#error_${key}`).text(result['errorBooks'][key]);
+            }
+            window.scrollTo({top: 100});
         }
 
     })

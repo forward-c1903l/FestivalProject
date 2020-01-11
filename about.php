@@ -8,7 +8,7 @@
 
     require('./common/top.php');
     require('./common/bottom.php');
-    Top('Contact Us', "./assets/css/about.css");
+    Top('About Us', "./assets/css/about.css");
 
     //save sesstion menu
     $_SESSION['menu'] = 4;
@@ -44,7 +44,22 @@
 
                             </div>
                             <div class='gallery-com'>
-                                
+                                <div class='title'>
+                                    <h6>Gallery Company</h6>
+                                </div>
+                                <div class='swiper-container'>
+                                    <div class='swiper-wrapper'>
+                                        <?php 
+                                            $result_gallery = AllGallery();
+                                            while($row_gallery = mysqli_fetch_array($result_gallery)) {
+                                        ?>
+                                        <div class="swiper-slide">
+                                            <img src="<?php echo $row_gallery['img']?>" alt="">
+                                        </div>
+                                        <?php }?>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
                             </div>
                         </div>
                         <div class='col-md-4 map-com'>
@@ -61,3 +76,6 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyQG78wKNsrCS3UFXwoBJIwf_i6HxAl84&callback=initMap">
 </script>
 </body>
+<?php 
+    Bottom();
+?>

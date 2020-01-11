@@ -18,3 +18,19 @@
 .group-infor {
     margin: 10px 0;
 }
+.gallery-com {
+    margin-top: 50px;
+}
+.title h6 {
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #6c757d;
+}
+.swiper-slide {
+    width: 582px !important;
+    height: 400px !important;
+}
+.swiper-slide img{
+    width: 100%;
+    height: 90%;
+}

@@ -5,3 +5,7 @@ function initMap(){
     );
     var marker = new google.maps.Marker({position: coords, map: map});
 }
+
+$(document).ready(function(){
+    var swiper = new Swiper('.swiper-container');
+})

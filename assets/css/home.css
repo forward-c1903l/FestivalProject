@@ -127,3 +127,7 @@ align-items: center;
 .title-the-best-festivals{
     margin-top: 0;
 }
+
+.swiper-pagination {
+    bottom: 0px !important;
+}
