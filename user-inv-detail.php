@@ -95,10 +95,10 @@
                     ?>
 
                     <td>
-                        <input type="text" value='<?php echo $row_item_invoice['quantity']?>' name='<?php echo $row_item_invoice['id']?>' class='ip-quantity'>
+                        <input type="text" value='<?php echo $row_item_invoice['quantity']?>' data-id='<?php echo $row_item_invoice['id']?>' class='ip-quantity'>
                     </td>
                     <td style='text-align: center'>
-                        <button type="button" value='<?php echo $row_item_invoice['id']?>' class='detele_item btn-open-popup'>
+                        <button type="button" data-id-button='<?php echo $row_item_invoice['id']?>' class='detele_item btn-open-popup'>
                             <i class="far fa-trash-alt"></i>
                         </button>
                     </td>

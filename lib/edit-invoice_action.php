@@ -91,10 +91,15 @@
                 ];
                 echo json_encode($compEdit);
             } else {
+                //tra ve quantity default cho front end
+                $sql = "SELECT quantity FROM invoice_details WHERE id_invoice='$idinv' AND id_book = '$idit'";
+                $result = mysqli_query($conn, $sql);
+                $row_quantity_df = mysqli_fetch_assoc($result);
                 $compEdit = [
                     'status' => false,
                     'error' => 'inventory',
-                    'name' => $row_item['name_book']
+                    'name' => $row_item['name_book'],
+                    'quantity_default' => $row_quantity_df['quantity']
                 ];
                 echo json_encode($compEdit);
             }

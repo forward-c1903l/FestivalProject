@@ -135,38 +135,55 @@
     function DeleteBook($arr) {
         global $conn;
 
-        $error = '';
+        $error = array();
         foreach($arr as $key=> $value) {
-            $sql = "SELECT id, id_category FROM books WHERE id='$value'";
+            $sql = "SELECT id, id_category, name_book FROM books WHERE id='$value'";
             $result = mysqli_query($conn, $sql);
             if(mysqli_num_rows($result) == 0) {
 
             } else {
                 $row = mysqli_fetch_assoc($result);
-               //delete folder
-                $dir_category = './../upload/books/'.$row['id_category'];
-                if(is_dir($dir_category)) {
-                    $dir_book = './../upload/books/'.$row['id_category'].'/'.$row['id'];
-                    if(is_dir($dir_book)) {
+                $name_book = $row['name_book'];
+                $id = $row['id'];
 
-                        //remove file before delete folder
-                        foreach(scandir($dir_book) as $file) {
-                            if ('.' === $file || '..' === $file) continue;
-                            if (is_dir("$dir_book/$file")) rmdir_recursive("$dir_book/$file");
-                            else unlink("$dir_book/$file");
+                //check book trong inventory.neu book da duoc mua va su dung thi khong xoa duoc
+                $sql = "SELECT * FROM invoice_details WHERE id_book='$id'";
+                $result_book_inven = mysqli_query($conn, $sql);
+                if(mysqli_num_rows($result_book_inven) == 0) {
+                    //delete folder
+                    $dir_category = './../upload/books/'.$row['id_category'];
+                    if(is_dir($dir_category)) {
+                        $dir_book = './../upload/books/'.$row['id_category'].'/'.$row['id'];
+                        if(is_dir($dir_book)) {
+
+                            //remove file before delete folder
+                            foreach(scandir($dir_book) as $file) {
+                                if ('.' === $file || '..' === $file) continue;
+                                if (is_dir("$dir_book/$file")) rmdir_recursive("$dir_book/$file");
+                                else unlink("$dir_book/$file");
+                            }
+                            rmdir($dir_book);
                         }
-                        rmdir($dir_book);
-                    } 
-                } 
+                        //delete book
+                        $sql = "DELETE FROM books WHERE id='$id'";
+                        $result = mysqli_query($conn, $sql);
+                    }
+                } else { 
+                    $book_error = [
+                        'name' => $name_book,
+                        'error' => 'can not delete !'
+                    ];
+                    array_push($error, $book_error);
+                }
+
             }
         }
 
-        foreach($arr as $key=> $value) {
-            $sql = "DELETE FROM books WHERE id='$value'";
-            $result = mysqli_query($conn, $sql);
+        if(empty($error)) {
+            echo "Success Delete";
+        } else {
+            echo json_encode($error);
         }
-
-        return "Success Delete";
         mysqli_close($conn);
     }
 ?>

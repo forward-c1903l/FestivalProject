@@ -260,7 +260,7 @@ $(document).ready(function(){
                 data: {delete: {action: 'delete', array_del: arrayDel}},
                 type: 'post',
                 success: function (res) {
-                    if(res = 'Success Delete') {
+                    if(res === 'Success Delete') {
                         toastr.success('You have successfully deleted!');
 
                         setTimeout(() => {
@@ -268,7 +268,15 @@ $(document).ready(function(){
                             window.scrollTo({top: 0 });
                         }, 1300);
                     } else {
-                        toastr.error(res);
+                        let error = JSON.parse(res);
+                        for(let item of error) {
+                            let stringError = `${item.name} ${item.error}`;
+                            toastr.error(stringError);
+                        }
+                        setTimeout(() => {
+                            location.reload();
+                            window.scrollTo({top: 0 });
+                        }, 1500);
                     }
                 }
             });

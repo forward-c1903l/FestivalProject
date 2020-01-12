@@ -178,10 +178,9 @@ $(document).ready(function() {
     let ipQuanIn = $('.ip-quantity');
 
     ipQuanIn.change(function(e) {
-
         let $this = $(this);
         let valIpQuanIn = e.target.value;
-        let name = e.target['name'];
+        let id = $this.attr('data-id');
 
         if(valIpQuanIn == 0) {
             toastr.error('Please enter quantity !');
@@ -192,7 +191,7 @@ $(document).ready(function() {
             $.ajax({
                 url: 'edit-invoice.php',
                 method: 'post',
-                data: {itemChange: {idItem: name, valItem: valIpQuanIn}}
+                data: {itemChange: {idItem: id, valItem: valIpQuanIn}}
             }).done(function(data) {
                 let dataNew = JSON.parse(data);
     
@@ -202,7 +201,7 @@ $(document).ready(function() {
                     $('#total-invoice').text(total);
                     toastr.success('You have successfully updated your invoice !');
                 } else if(!dataNew['status'] && dataNew['error'] === 'inventory'){
-                    $this.val(quantityDefault);
+                    $this.val(dataNew['quantity_default']);
     
                     let textError = `Item ${dataNew['name']} exceeds the allowed limit.Please try again!`;
                     toastr.error(textError);
@@ -228,7 +227,7 @@ $(document).ready(function() {
 
     $('#yes-delete').click(function() {
         let btnActiveDelete = $("button[name='active-delete']");
-        let valIdDelete = btnActiveDelete.val();
+        let valIdDelete = btnActiveDelete.attr('data-id-button');
         
         if(typeof(valIdDelete) !== 'undefined') {
             $.ajax({
