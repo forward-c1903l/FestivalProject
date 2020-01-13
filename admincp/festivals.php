@@ -14,6 +14,9 @@
     // Check GET URL
     $resultGetFes = CheckGetUrlFes();
 
+    //Check By Religions
+    $resultByReli = CheckGetUrlByReligion();
+
 ?>
 <body>
     <?php include('common/header.php') ?>
@@ -29,6 +32,36 @@
         ?>
         <div class="container">       
             <div class="admin-festivals">
+                <div class=''>
+                    <label for="by_religions">Religion category: </label>
+                    <select name="by_religions" id="by_religions">
+                        <?php 
+                            if($resultByReli == 0) {
+                        ?>
+
+                        <option value="0">All</option>
+                        <?php 
+                            $result_religions = AllReligionsCategory();
+                            while($row_reli = mysqli_fetch_array($result_religions)) {
+                        ?>
+                            <option value="<?php echo $row_reli['id']?>"><?php echo $row_reli['name_religion']?></option>
+                        <?php }?>
+
+                        <?php } else {
+                            $result_name_reli = NameReligion($resultByReli);
+                        ?>
+                            <option value="<?php echo $resultByReli?>"><?php echo $result_name_reli?></option>
+                            <option value="0">All</option>
+
+                            <?php 
+                                $result_religions = AllReligionsCategory($resultByReli);
+                                while($row_reli = mysqli_fetch_array($result_religions)) {
+                            ?>
+                                <option value="<?php echo $row_reli['id']?>"><?php echo $row_reli['name_religion']?></option>
+                            <?php }?>
+                        <?php }?>
+                    </select>
+                </div>
                 <table>
                     <thead>
                         <tr>
@@ -45,7 +78,7 @@
                     <tbody>
 
                         <?php 
-                            $resultAllFes = AllFestivals();
+                            $resultAllFes = AllFestivals($resultByReli);
                             while($row_all = mysqli_fetch_array($resultAllFes)) {
                                 $row_all['status'] == 0 ? $status = 'No Active': $status = 'Active';
                                 $row_all['status'] == 0 ? $class = 'no-active': $class = 'active';

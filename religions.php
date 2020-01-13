@@ -11,6 +11,12 @@
 
     // check Id Header
     $check = CheckIdFestivalHeader();
+
+    //count page 
+    $count = CountPages($check);
+
+    // check page
+    $check_page = CheckPageFestivals();
 ?>
 
 <body>
@@ -34,7 +40,7 @@
                         </div>
 
                         <?php 
-                            $festivals = CheckFestivals();
+                            $festivals = CheckFestivals($check_page);
                             while ($row_festivals = mysqli_fetch_array($festivals)) {
                                 $dateConvert = convertMonth($row_festivals['date_of_the_festival']);
                         ?>
@@ -65,6 +71,25 @@
                         <hr>
 
                         <?php }?>
+
+                        <div class="pagination col-12 justify-content-center">
+                            <?php 
+                                $pagi = ceil($count/5);
+                                $arr = range(1, $pagi);
+
+                                $url = $_SESSION['religion_user'] == 'all' 
+                                        ?  $_SERVER['PHP_SELF'].'?' 
+                                        : $_SERVER['PHP_SELF'].'?f='.$_SESSION['religion_user'].'&';
+
+                                foreach($arr as $key => $value) {
+                            ?>
+                                <div class='item-pagi'>
+                                    <a href="<?php echo $url.'page='.$value?>" class='item-pagi-a'>
+                                        <?php echo $value?>
+                                    </a>
+                                </div>
+                                <?php }?>
+                        </div>
 
                     </div>
                     <!--phần này là side bar -->

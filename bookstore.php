@@ -45,34 +45,6 @@
 
                     <?php }?>
 
-
-                    <div class="pagination col-12 justify-content-center">
-                        <div class='item-pagi'>
-                            <a href="" class='item-pagi-a'>
-                                <
-                            </a>
-                        </div>
-                        <div class='item-pagi'>
-                            <a href="" class='item-pagi-a'>
-                                1
-                            </a>
-                        </div>
-                        <div class='item-pagi'>
-                            <a href="" class='item-pagi-a'>
-                                2
-                            </a>
-                        </div>
-                        <div class='item-pagi'>
-                            <a href="" class='item-pagi-a'>
-                                3
-                            </a>
-                        </div>
-                        <div class='item-pagi'>
-                            <a href="" class='item-pagi-a'>
-                                >
-                            </a>
-                        </div>
-                    </div>
                     
                 </div>
             </div>

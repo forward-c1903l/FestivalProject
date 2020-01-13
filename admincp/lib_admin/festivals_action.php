@@ -14,10 +14,49 @@
         }
     }
 
-    function AllFestivals() {
+    function CheckGetUrlByReligion() {
         global $conn;
-        $sql = "SELECT * FROM itemfestivals ORDER BY id DESC";
+        if(isset($_GET['reli'])) {
+            $reli = $_GET['reli'];
+            if($reli == 0) {
+                return 0;
+            } else {
+                //check id reli
+                $sql = "SELECT * FROM religions WHERE id='$reli'";
+                $result = mysqli_query($conn, $sql);
+                return mysqli_num_rows($result) == 0 ? 0 : $reli ;
+            }
+        } else {
+            return 0;
+        }
+    }
+
+    function NameReligion($id) {
+        global $conn;
+        $sql = "SELECT name_religion FROM religions WHERE id='$id'";
         $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_assoc($result);
+        return $row['name_religion'];
+        mysqli_close($conn);
+    }
+
+    function AllReligionsCategory($id = 0) {
+        global $conn;
+        $sql = $id == 0 ? "SELECT * FROM religions ORDER BY id DESC" : "SELECT * FROM religions WHERE id != '$id' ORDER BY id DESC";
+        $result = mysqli_query($conn, $sql);
+        return $result;
+        mysqli_close($conn);
+    }
+
+    function AllFestivals($id_reli) {
+        global $conn;
+        $sql_fes = '';
+        if($id_reli == 0) {
+            $sql_fes = "SELECT * FROM itemfestivals ORDER BY id DESC";
+        } else {
+            $sql_fes = "SELECT * FROM itemfestivals WHERE id_reli = '$id_reli' ORDER BY id DESC";
+        }
+        $result = mysqli_query($conn, $sql_fes);
         return $result;
         mysqli_close($conn);
     }

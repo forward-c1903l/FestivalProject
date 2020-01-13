@@ -82,6 +82,34 @@
     color: #e74c3c;
 }
 
+.pagination {
+    margin-top: 30px;
+}
+
+.pagination .item-pagi {
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.pagination .item-pagi .item-pagi-a{
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    line-height: 35px;
+    background: #007bff;
+    text-align: center;
+    transition: 0.5s;
+    font-size: 13px;
+    
+}
+
+.pagination .item-pagi .item-pagi-a:hover{
+    background-color: #0069d9;
+}
+
 @media screen and (max-width: 1023px) {
     .blog-festival {
         margin-top: 20px;

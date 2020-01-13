@@ -71,6 +71,14 @@ $(document).ready(function(){
         return result;
     }
 
+    //Change religion category
+    $('#by_religions').on('change', function() {
+        let id = $(this).val();
+        let url = `festivals.php?reli=${id}`;
+        window.location.href = url;
+    })
+    
+
     // ADD FESTIVALS
     $('#submit-add-fes').click(function() {
         $('.error').text('');
