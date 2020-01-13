@@ -52,7 +52,7 @@
         global $conn;
 
         if(isset($idReligion)) {
-            $sql = "SELECT * FROM religions WHERE id = '$idReligion'";
+            $sql = "SELECT * FROM religions WHERE id = '$idReligion' AND status = 1";
             $result = mysqli_query($conn, $sql);
             $row = mysqli_num_rows($result);
             if($row == 0) {
