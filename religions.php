@@ -14,7 +14,7 @@
 
     //count page 
     $count = CountPages($check);
-
+    var_dump($count);
     // check page
     $check_page = CheckPageFestivals();
 ?>
@@ -74,20 +74,24 @@
 
                         <div class="pagination col-12 justify-content-center">
                             <?php 
-                                $pagi = ceil($count/5);
-                                $arr = range(1, $pagi);
 
-                                $url = $_SESSION['religion_user'] == 'all' 
-                                        ?  $_SERVER['PHP_SELF'].'?' 
-                                        : $_SERVER['PHP_SELF'].'?f='.$_SESSION['religion_user'].'&';
+                                if($count != 0) {
+                                
+                                    $pagi = ceil($count/5);
+                                    $arr = range(1, $pagi);
 
-                                foreach($arr as $key => $value) {
-                            ?>
-                                <div class='item-pagi'>
-                                    <a href="<?php echo $url.'page='.$value?>" class='item-pagi-a'>
-                                        <?php echo $value?>
-                                    </a>
-                                </div>
+                                    $url = $_SESSION['religion_user'] == 'all' 
+                                            ?  $_SERVER['PHP_SELF'].'?' 
+                                            : $_SERVER['PHP_SELF'].'?f='.$_SESSION['religion_user'].'&';
+
+                                    foreach($arr as $key => $value) {
+                                ?>
+                                    <div class='item-pagi'>
+                                        <a href="<?php echo $url.'page='.$value?>" class='item-pagi-a'>
+                                            <?php echo $value?>
+                                        </a>
+                                    </div>
+                                    <?php }?>
                                 <?php }?>
                         </div>
 
